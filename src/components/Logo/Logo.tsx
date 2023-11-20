@@ -1,11 +1,12 @@
 import React from 'react'
 import { LOGOS } from '../../mock/logos.mock';
 import './style.css'
+import '../../animations.css'
 
 
 const Logo: React.FunctionComponent = () => {
   return (
-    <div id='logo_container'>
+    <div id='logo_container' className='moving-element '>
         {LOGOS.map((logo, index) => {
             return (
                 <div 
