@@ -8,11 +8,7 @@
     width: 65%;
     aspect-ratio: 3/1.5;
     margin: auto;
-}
-
-#gallery_list + div {
-    /* height: 100%; */
-    /* width: 100%; */
+    user-select: none;
 }
 
 #gallery_image_0 {

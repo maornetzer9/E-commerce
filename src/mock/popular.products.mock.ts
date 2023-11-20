@@ -7,7 +7,7 @@ import p5 from '../assets/products/p5.png';
 export interface IProduct {path: string, mode?: 'hot' | 'sale'};
 
 
-export const PRODUCTS:IProduct[] = 
+export const POPULAR_PRODUCTS:IProduct[] = 
 [
     {
         path: p1,

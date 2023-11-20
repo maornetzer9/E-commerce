@@ -55,10 +55,14 @@ const ImageModel: React.FunctionComponent<Props> = ({ url, preview = false, styl
 
     return (
         <>
-            <Box component={'div'} onMouseLeave={setHoverPreviewLeave} onMouseEnter={setHoverPreviewEnter} sx={{
-                width: '100%',
-                height: '100%',
-            }}>
+            <Box
+                component={'div'}
+                onMouseLeave={setHoverPreviewLeave}
+                onMouseEnter={setHoverPreviewEnter}
+                    sx={{
+                        width: '100%',
+                        height: '100%',
+                    }}>
 
                 <ImageListItem
                     style={{ height: '100%' }}

@@ -3,23 +3,44 @@ import './App.css';
 import GalleryList from './components/GalleryList/GalleryList';
 import Logo from './components/Logo/Logo';
 import Navbar from './components/Navbar/Navbar';
-import ImageModel from './components/ImageModel/ImageModel';
-console.log(process.env.PUBLIC_URL)
-function App() {
+import Section from './components/Section/Section';
+import ProductsList from './components/ProductsList/ProductsList';
+import Typography from '@mui/material/Typography';
+import FilterController from './components/FilterController/FilterController';
+
+const App: React.FunctionComponent = () => {
+
+    const inlineStyles =
+    {
+        productsListAppBar: { marginTop: '5%', backgroundColor: 'transparent', color: 'black', boxShadow: 'none', height: '0' },
+    };
+
     return (
         <div className="App">
 
-            <Navbar/>    
+            <Section id='1'>
+                <Navbar />
+            </Section>
 
             {/* <Button mode='dark' size='medium' attributes={{ disabled: true }}> */}
-                {/* Button */}
-            {/* </Button> */}
 
-            <Logo/>
-            
-            <GalleryList/>
+            <Logo />
 
-            {/* <ImageModel url={'https://images.unsplash.com/photo-1563298723-dcfebaa392e3'} preview={true}/> */}
+            <Section id='2'>
+                <GalleryList />
+            </Section>
+
+            <Section id='3'>
+                <Typography
+                    variant="h3"
+                    margin={'5%'}
+                    height={0}
+                >
+                    Or Subscribe To The Newsletter
+                </Typography>
+                <FilterController />
+                <ProductsList />
+            </Section>
 
         </div>
     );
