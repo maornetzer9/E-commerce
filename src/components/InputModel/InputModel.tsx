@@ -1,7 +1,9 @@
-import React, { useRef, useEffect, useState, forwardRef } from 'react'
-import { Box, Input, TextField } from '@mui/material'
+import React, { useRef } from 'react'
+import { Box, TextField } from '@mui/material'
 import "../../animations.css"
-interface Props { onChange: () => void; isOpen: boolean, setIsOpen: (isOpen: boolean) => void; label: string };
+
+
+interface Props { onChange?: () => void; isOpen?: boolean, setIsOpen: (isOpen: boolean) => void; label: string };
 
 const InputModel: React.FunctionComponent<Props> = ({ onChange, isOpen, setIsOpen, label }) => {
     const ref = useRef<HTMLInputElement | null>(null)

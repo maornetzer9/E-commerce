@@ -1,16 +1,16 @@
 import React from 'react'
-import { Box } from '@mui/material'
+import { Box, SxProps } from '@mui/material'
 
-const Section: React.FunctionComponent<React.PropsWithChildren & { id: string }> = ({ children, id }) => {
+interface Props { id: string; sx?: SxProps; className?: string }
+
+const Section: React.FunctionComponent<React.PropsWithChildren<Props>> = ({ children, id, sx, className }) => {
 
     return (
         <Box
-            component={'div'}
             id={id}
-            sx={{
-                minHeight: '300px',
-                minWidth: window.innerWidth,
-            }}
+            sx={sx}
+            className={className}
+            component={'div'}
         >
             {children}
         </Box>

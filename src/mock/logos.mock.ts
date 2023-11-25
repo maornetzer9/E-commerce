@@ -1,16 +1,16 @@
-import logo1 from '../assets/logos/logo1.png'
-import logo2 from '../assets/logos/logo2.png'
-import logo3 from '../assets/logos/logo3.png'
-import logo4 from '../assets/logos/logo4.png'
-import logo5 from '../assets/logos/logo5.png'
+import icon1 from '../assets/icons/icon1.png'
+import icon2 from '../assets/icons/icon2.png'
+import icon3 from '../assets/icons/icon3.png'
+import icon4 from '../assets/icons/icon4.png'
+import icon5 from '../assets/icons/icon5.png'
 
 export interface ILogo {path: string};
 
 export const LOGOS:ILogo[] = 
 [
-    { path: logo1 },
-    { path: logo2 },
-    { path: logo3 },
-    { path: logo4 },
-    { path: logo5 }
+    { path: icon1},
+    { path: icon2},
+    { path: icon3},
+    { path: icon4},
+    { path: icon5}
 ];

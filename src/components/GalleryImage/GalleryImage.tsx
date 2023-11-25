@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import { Image } from 'antd';
 import sale from '../../assets/icons/sale.png'
 import hot from '../../assets/icons/hot.png'
 import ImageModel from '../ImageModel/ImageModel';
@@ -7,13 +6,15 @@ import { Box } from '@mui/material'
 
 interface Props { mode: 'hot' | 'sale' | 'none', path: string, preview: boolean};
 
+/* eslint-disable */
 const GalleryImage: React.FunctionComponent<Props> = ({ mode, path, preview }) => {
+    
     const [imageWidth, setImageWidth] = useState<number | null>(null);
     const [imageHeight, setImageHeight] = useState<number | null>(null);
 
     return (
-        <div
-            style={{
+        <Box
+            sx={{
                 width: '100%',
                 height: '100%',
                 minWidth: imageWidth + 'px',
@@ -23,8 +24,8 @@ const GalleryImage: React.FunctionComponent<Props> = ({ mode, path, preview }) =
                 margin: 0,
             }}
         >
-            <div
-                style={{
+            <Box
+                sx={{
                     width: '100%',
                     height: '100%',
                     minWidth: imageWidth + 'px',
@@ -38,7 +39,7 @@ const GalleryImage: React.FunctionComponent<Props> = ({ mode, path, preview }) =
                     url={path}
                     preview={preview}
                 />
-            </div>
+            </Box>
 
             {
                 mode != 'none' && (
@@ -58,8 +59,7 @@ const GalleryImage: React.FunctionComponent<Props> = ({ mode, path, preview }) =
                     </Box>
                 )
             }
-
-        </div>
+        </Box>
     )
 }
 

@@ -1,0 +1,30 @@
+.form_container {
+    padding: 20px;
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+
+.form_images_container {
+    display: inline-flex;
+    margin: 10px;
+    margin-top: 3%;
+    margin-bottom: 3%;
+    border: 1px solid black;
+    position: relative;
+}
+
+.form_sub_header_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.form_submit_inner_container {
+    width: 45%;
+    align-items: center;
+    display: inline-flex;
+    justify-content: space-evenly;
+}
+

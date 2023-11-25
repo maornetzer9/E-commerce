@@ -8,10 +8,10 @@ import shoe from '../assets/products/shoe.png';
 import womenHoodies from '../assets/products/p1.png';
 import sportJacket from '../assets/products/sportJacket.png';
 
-export interface IProduct {url: string; description: string; price: string; salePrice?: string; title: string};
+export interface VERTICAL_LIST {url: string; description: string; price: string; salePrice?: string; title: string};
 
 
-export const PRODUCTS:IProduct[] = 
+export const VERTICAL_LIST:VERTICAL_LIST[] = 
 [
     {
         url: pants,
@@ -68,6 +68,13 @@ export const PRODUCTS:IProduct[] =
         price: '$160.00',
         salePrice: '$220',
         title: 'glasses',
+    },
+    {
+        url: womenHoodies,
+        description: 'Styles Women Shirt',
+        price: '$123.90',
+        salePrice: '$89.90',
+        title: 'Shirt',
     },
 ];
 

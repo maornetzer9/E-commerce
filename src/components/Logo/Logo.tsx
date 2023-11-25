@@ -1,25 +1,61 @@
 import React from 'react'
-import { LOGOS } from '../../mock/logos.mock';
-import './style.css'
-import '../../animations.css'
+import ImageModel from '../ImageModel/ImageModel';
+import { Box } from '@mui/material'
+import ButtonModel from '../ButtonModel/ButtonModel';
 
+interface Props { url: string, styles?: React.CSSProperties }
 
-const Logo: React.FunctionComponent = () => {
-  return (
-    <div id='logo_container' className='moving-element '>
-        {LOGOS.map((logo, index) => {
-            return (
-                <div 
-                    key={index}>
-                        <img 
-                        src={logo.path} 
-                        alt="Logo" 
+const Logo: React.FunctionComponent<Props> = ({ url, styles }) => {
+    return (
+        <Box
+            component={'div'}
+            display={'flex'}
+            alignItems={'center'}
+            position={'relative'}
+            width={'100%'}
+            border={'1px solid black'}
+        >
+            <Box
+                component={'div'}
+                display={'flex'}
+                justifyContent={'center'}
+                alignItems={'center'}
+                width={'100%'}
+                position={'relative'}
+            >
+                <ImageModel url={url} styles={styles} preview={false} />
+
+                <Box
+                    position={'absolute'}
+                    top={'78%'}
+                    left={'13%'}
+                    width={'100%'}
+                >
+                    <ButtonModel 
+                        children={'See Collection'}
+                        sx={{
+                            height: '75px',
+                            width:'250px',
+                            alignItems: 'center',
+                            color: 'black',
+                            backgroundColor: 'white',
+                            textTransform:'none',
+                            fontFamily:'title-case',
+                            fontWeight: 'bold',
+                            borderRadius:'0px',
+                            transition: 'transform 1.3s ease',
+                            fontSize:'29px',
+                            '&:hover' : {
+                                backgroundColor:'#FF6F61',
+                                transform: 'scale(0.9)',
+                            }
+                        }}
                     />
-                </div>
-            )
-        })}
-    </div>
-  )
+                </Box>
+
+            </Box>
+        </Box>
+    )
 }
 
 

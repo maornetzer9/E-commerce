@@ -95,7 +95,6 @@ const ImageModel: React.FunctionComponent<Props> = ({ url, preview = false, styl
                         <Typography color={'#fff'} fontSize={'14'} textAlign={'center'} alignItems={'center'} display={'flex'} gap={'10px'}>
                             Preview <MdOutlinePreview />
                         </Typography>
-
                     </Box>
                 )}
             </Box>

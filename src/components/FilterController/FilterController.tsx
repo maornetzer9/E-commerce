@@ -1,18 +1,24 @@
-import React from 'react'
+import React, { ReactNode } from 'react'
 import { Box, Button } from '@mui/material'
 import { BiSolidFilterAlt } from "react-icons/bi";
 
-interface Props { text?: string; styles?:React.CSSProperties } 
+interface IFilterController { children: ReactNode; styles?: React.CSSProperties; }
 
-const FilterController: React.FunctionComponent<Props> = ({text, styles }) => {
+const FilterController: React.FunctionComponent<IFilterController> = ({ children, styles }) => {
     return (
-        <Box component={'div'} style={{ margin: '2%' }}>
+        <Box
+            display={'inline-flex'}
+            width={'67%'}
+            alignItems={'center'}
+            justifyContent={'center'}
+            marginLeft={2.5}
+        >
+
             <Box
                 component={'div'}
-                sx={{
-                    position: 'absolute',
-                    left: '17%',
-                }}
+                width={600}
+                display={'flex'}
+                justifyContent={'space-evenly'}
             >
                 <Button
                     style={{
@@ -55,14 +61,47 @@ const FilterController: React.FunctionComponent<Props> = ({text, styles }) => {
                 >  Jacket
                 </Button>
             </Box>
-            <Button
-                style={{ backgroundColor: '#1E2832' }}
-                sx={{ position: 'relative', marginLeft: '64%' }}
-                variant='contained'
-                color='warning'
+
+            <Box
+                component={'div'}
+                display={'flex'}
+                height={100}
+                width={'100%'}
+                alignItems={'center'}
+                justifyContent={'flex-end'}
+
             >
-                <BiSolidFilterAlt /> Filter
-            </Button>
+                <Box
+                    component={'div'}
+                    height={60}
+                    display={'flex'}
+                    justifyContent={'center'}
+                    alignItems={'center'}
+                >
+                    <Button
+                        sx={{
+                            backgroundColor: '#1E2832',
+                            textTransform: 'none',
+                            borderRadius: '0px',
+                        }}
+                        variant='contained'
+                        color='warning'
+                    >
+                        <Box
+                            style={styles}
+                            component={'div'}
+                            width={'fit-content'}
+                            display={'flex'}
+                            alignItems={'center'}
+                            justifyContent={'center'}
+                            gap={1}
+                        >
+                            <BiSolidFilterAlt fontSize={19} /> {children}
+                        </Box>
+
+                    </Button>
+                </Box>
+            </Box>
         </Box>
     )
 }

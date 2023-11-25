@@ -2,17 +2,19 @@ import React, { useState } from 'react'
 import { POPULAR_PRODUCTS } from '../../mock/popular.products.mock'
 import GalleryImage from '../GalleryImage/GalleryImage';
 import './style.css'
-interface Props { }
+import { Box } from '@mui/material';
 
-const GalleryList: React.FunctionComponent<Props> = ({ }) => {
+/* eslint-disable */
+const GalleryList: React.FunctionComponent = ({ }) => {
 
     const [products, setProducts] = useState(POPULAR_PRODUCTS);
 
     return (
-        <div id='gallery_list'>
+        <Box component={'div'} id='gallery_list'>
             {products.map((product, index) => {
                 return (
-                    <div
+                    <Box
+                        component={'div'}
                         key={`gallery_image_${index}`}
                         id={`gallery_image_${index}`}
                     >
@@ -21,11 +23,11 @@ const GalleryList: React.FunctionComponent<Props> = ({ }) => {
                             mode={product.mode ? product.mode: 'none'}
                             path={product.path}
                         />
-                    </div>
+                    </Box>
                 )
             })}
 
-        </div>
+        </Box>
     )
 }
 
