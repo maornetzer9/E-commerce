@@ -14,16 +14,13 @@ const ImageHover: React.FunctionComponent<IImageHover> = ({ url, styles, isHover
     const [like, setLike] = useState(false);
     const [isHover, setIsHover] = useState(false);
 
-
     const handleMouseEnter = () => setIsHover(true);
     const handleMouseLeave = () => setIsHover(false);
-
 
     const handleLike = () => setLike(true);
     const handleUnLike = () => setLike(false);
 
     const hoverState = isHovered || isHover;
-
 
     return (
         <Box
@@ -32,10 +29,9 @@ const ImageHover: React.FunctionComponent<IImageHover> = ({ url, styles, isHover
             justifyContent={'center'}
         >
             <Box
+                component={'div'}
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
-
-                component={'div'}
                 sx={{
                     position: 'relative',
                     cursor: 'pointer',
@@ -53,16 +49,16 @@ const ImageHover: React.FunctionComponent<IImageHover> = ({ url, styles, isHover
                         justifyContent={'space-between'}
                     >
                         <Box
-                            onClick={() => { like ? handleUnLike() : handleLike() }}
                             component={'div'}
+                            gap={1}
                             width={'10%'}
+                            marginLeft={1}
+                            color={'white'}
                             display={'flex'}
                             alignItems={'center'}
                             position={'relative'}
                             justifyContent={'flex-start'}
-                            marginLeft={1}
-                            gap={1}
-                            color={'white'}
+                            onClick={() => { like ? handleUnLike() : handleLike() }}
                         >
                             <FavoriteBorderIcon sx={{ '&:hover': { color: '#FF6F61', transition: '0.7s' }, color: like ? 'red' : 'white' }} />
                         </Box>
@@ -70,13 +66,26 @@ const ImageHover: React.FunctionComponent<IImageHover> = ({ url, styles, isHover
                         <Box
                             component={'div'}
                             display={'flex'}
-                            justifyContent={'center'}
                             position={'absolute'}
+                            justifyContent={'center'}
                             left={'15%'}
                         >
-                            <SearchIcon sx={{ color: 'white', '&:hover': { color: '#FF6F61', transition: '0.7s' } }} />
-                        </Box>
 
+                            <ImageModel
+                                url={url}
+                                preview={true}
+                                showIconPreview={false}
+                                styles={{ width: '50px', height: '50px'}}
+                            />
+
+                        </Box>
+                        <Box
+                            position={'absolute'}
+                            color={'white'}
+                            left={'20%'}
+                        >
+                            <SearchIcon />
+                        </Box>
                         <Typography
                             sx={{ '&:hover': { color: '#FF6F61', transition: '0.7s' } }}
                             variant='body2'

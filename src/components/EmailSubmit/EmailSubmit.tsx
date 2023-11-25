@@ -47,7 +47,7 @@ const EmailSubmit: React.FunctionComponent = () => {
                             key={index}
                             preview={true}
                             url={image.url}
-                            styles={{ height: '200px', width: '200px', }}
+                            styles={{ height: '200px', width: '200px'}}
                         />
                     </Box>
                 )

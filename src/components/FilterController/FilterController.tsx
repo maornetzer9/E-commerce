@@ -2,9 +2,9 @@ import React, { ReactNode } from 'react'
 import { Box, Button } from '@mui/material'
 import { BiSolidFilterAlt } from "react-icons/bi";
 
-interface IFilterController { children: ReactNode; styles?: React.CSSProperties; }
+interface IFilterController { children: ReactNode; styles?: React.CSSProperties; showIcon?: boolean }
 
-const FilterController: React.FunctionComponent<IFilterController> = ({ children, styles }) => {
+const FilterController: React.FunctionComponent<IFilterController> = ({ children, styles, showIcon = true }) => {
     return (
         <Box
             display={'inline-flex'}
@@ -73,6 +73,7 @@ const FilterController: React.FunctionComponent<IFilterController> = ({ children
             >
                 <Box
                     component={'div'}
+                    width={'17%'}
                     height={60}
                     display={'flex'}
                     justifyContent={'center'}
@@ -96,7 +97,7 @@ const FilterController: React.FunctionComponent<IFilterController> = ({ children
                             justifyContent={'center'}
                             gap={1}
                         >
-                            <BiSolidFilterAlt fontSize={19} /> {children}
+                            <BiSolidFilterAlt fontSize={19} display={showIcon ? 'flex' : 'none'}/> {children}
                         </Box>
 
                     </Button>

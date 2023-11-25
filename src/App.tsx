@@ -48,7 +48,7 @@ const App: React.FunctionComponent = () => {
                 >
                     Best Sellers
                 </Typography>
-                <FilterController children={'Show All'} /> 
+                <FilterController children={'Show All'} showIcon={false}/> 
                 <VerticalList />
             </Section>
 
