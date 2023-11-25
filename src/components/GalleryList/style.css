@@ -1,5 +1,6 @@
 #gallery_list {
     display: grid;
+    height: 700px;
     grid-template-columns: 2fr 1fr 1fr;
     grid-template-areas: 
     'image0 image1 image2'

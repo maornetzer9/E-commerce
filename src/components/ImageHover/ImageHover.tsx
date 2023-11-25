@@ -24,11 +24,14 @@ const ImageHover: React.FunctionComponent<IImageHover> = ({ url, styles, isHover
 
     return (
         <Box
+            draggable={false}
             component={'div'}
             display={'flex'}
             justifyContent={'center'}
+            style={{userSelect:'none'}}
         >
             <Box
+
                 component={'div'}
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
@@ -69,6 +72,7 @@ const ImageHover: React.FunctionComponent<IImageHover> = ({ url, styles, isHover
                             position={'absolute'}
                             justifyContent={'center'}
                             left={'15%'}
+
                         >
 
                             <ImageModel
