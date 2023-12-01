@@ -28,7 +28,7 @@ const FooterPayment: React.FunctionComponent = () => {
                     color: 'white',
                 }}
             >
-                <Typography> 2022 Coral , Inc. </Typography>
+                <Typography> 2023 Coral , Inc. </Typography>
 
                 <Box
                     component={'div'}

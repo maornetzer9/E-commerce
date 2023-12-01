@@ -1,7 +1,7 @@
 import React, { ReactNode } from 'react';
 import { Box, Button } from '@mui/material';
 import { BiSolidFilterAlt } from 'react-icons/bi';
-import './style.css'; // Import the CSS file
+import './filterController.css'; // Import the CSS file
 
 interface IFilterController { children: ReactNode; styles?: React.CSSProperties; showIcon?: boolean }
 

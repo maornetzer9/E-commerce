@@ -8,14 +8,14 @@
 
 #vertical_list {
     display: flex;
-    align-items: center;    
+    align-items: center;
     overflow: hidden;
     gap: 20px;
 }
 
 @media only screen and (max-width: 768px) {
     #vertical_list_container {
-        height: auto; /* Adjust the height as needed for smaller screens */
+        height: auto;
     }
 
     #vertical_list {

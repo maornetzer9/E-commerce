@@ -2,7 +2,7 @@ import { Box } from '@mui/material'
 import React from 'react'
 import Product from '../Product/Product'
 import { PRODUCTS } from '../../mock/products.mock'
-import '../Product/style.css'
+import '../Product/product.css'
 
 interface IProductList { className?: string }
 

@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import Product from '../Product/Product';
 import { Box, IconButton } from '@mui/material';
+import { VERTICAL_LIST } from '../../mock/verticalList';
+import Product from '../Product/Product';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
-import { VERTICAL_LIST } from '../../mock/verticalList';
 import './verticalList.css'
 
 interface IVerticalList { url?: string; description?: string; price?: string; salePrice?: string; title?: string; key?: number; }
@@ -28,7 +28,7 @@ const VerticalList: React.FunctionComponent<IVerticalList> = () => {
             else 
             {
                 window.innerWidth <= 600 ? scrollAmount = 320 : scrollAmount = 950
-                
+
                 container.scrollLeft -= scrollAmount;
                 setRightArrowPosition(Math.max(rightArrowPosition - scrollAmount, 0));
             }
@@ -58,13 +58,21 @@ const VerticalList: React.FunctionComponent<IVerticalList> = () => {
                 ))}
             </Box>
 
-            <Box position={'absolute'} left={'17%'} top={'30%'}>
+            <Box
+                position={'absolute'}
+                left={'17%'}
+                top={'30%'}
+            >
                 <IconButton onClick={() => scroll('left')}>
                     <KeyboardArrowLeftIcon sx={{ fontSize: '100px' }} />
                 </IconButton>
             </Box>
 
-            <Box position={'absolute'} right={'17%'} top={'30%'} >
+            <Box
+                position={'absolute'}
+                right={'17%'}
+                top={'30%'}
+            >
                 <IconButton onClick={() => scroll('right')}>
                     <KeyboardArrowRightIcon sx={{ fontSize: '100px' }} />
                 </IconButton>

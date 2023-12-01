@@ -11,7 +11,7 @@
     transform: rotate(270deg);
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 940px) {
     .products_list_section {
         width: 100%;
         display: flex;

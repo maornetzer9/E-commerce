@@ -8,7 +8,7 @@ import facebook from '../../assets/icons/facebook.png';
 import twitter from '../../assets/icons/twitter.png'
 import instagram from '../../assets/icons/instagram.png'
 import Typography from '@mui/material/Typography';
-import './style.css'
+import './footer.css'
 
 
 

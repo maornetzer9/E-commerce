@@ -39,9 +39,9 @@
     .FilterController {
         display: flex;
         justify-content: center;
+        text-align: center;
         flex-direction: column-reverse;
         width: 100%;
-        margin-bottom: 2%;
     }
 
     .ButtonContainer {
