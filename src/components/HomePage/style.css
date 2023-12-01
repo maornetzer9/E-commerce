@@ -15,6 +15,7 @@
 
 @media only screen and (max-width: 768px) {
     .products_list_section {
+        
         position: relative;
         display: flex;
         justify-content: center;
@@ -22,7 +23,7 @@
         width: 100%;
     }
 
-    .gallery-list-section {
+    #gallery-list-section {
         transform: rotate(90deg);
         position: relative;
         width: 100%;

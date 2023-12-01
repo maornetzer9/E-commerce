@@ -51,11 +51,11 @@ const Navbar: React.FunctionComponent = () => {
                     alignItems={'center'}
                     width={'15%'}
                 >
-                    <button 
+                    <button
                         className='navbar_button'
-                        onClick={() => setOpenSearch(true)} 
-                        >
-                             <IoSearchSharp fontSize={25}/>
+                        onClick={() => setOpenSearch(true)}
+                    >
+                        <IoSearchSharp fontSize={25} />
                     </button>
                     <InputModel onChange={() => { }} isOpen={openSearch} setIsOpen={setOpenSearch} label='Search' />
                 </Box>
@@ -63,9 +63,9 @@ const Navbar: React.FunctionComponent = () => {
                     component={'div'}
                     id='navbar_logo'
                 >
-                    <img src={CORAL2} alt="Logo"/>
-                    <img src={CORAL}  alt="Logo"/>
-                    <img src={CORAL3} alt="Logo"/>
+                    <img src={CORAL2} alt="Logo" />
+                    <img src={CORAL} alt="Logo" />
+                    <img src={CORAL3} alt="Logo" />
                 </Box>
                 <Box
                     component={'div'}
@@ -79,7 +79,7 @@ const Navbar: React.FunctionComponent = () => {
                             boxShadow: buttons.boxShadow,
                             background: buttons.background,
                             textTransform: buttons.textTransform,
-                            width:'95px',
+                            width: '95px',
                             fontSize: '16px',
                             fontWeight: 'lighter',
                             '&:hover': { backgroundColor: 'transparent', boxShadow: 'none', color: '#FF6F61' }
@@ -102,7 +102,7 @@ const Navbar: React.FunctionComponent = () => {
                             boxShadow: buttons.boxShadow,
                             background: buttons.background,
                             textTransform: buttons.textTransform,
-                            width:'95px',
+                            width: '95px',
                             fontSize: '16px',
                             fontWeight: 'lighter',
                             '&:hover': { backgroundColor: 'transparent', boxShadow: 'none', color: '#FF6F61' }

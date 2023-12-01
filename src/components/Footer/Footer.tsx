@@ -50,9 +50,8 @@ const Footer: React.FunctionComponent = () => {
             </Box>
 
             <Box
+                id='footer_sections_container'
                 component={'div'}
-                display={'flex'}
-                gap={20}
             >
                 <Box
                     id='footer_sections'

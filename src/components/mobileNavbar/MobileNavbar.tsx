@@ -10,9 +10,9 @@ import { MdSupervisorAccount } from "react-icons/md";
 import ButtonModel from '../ButtonModel/ButtonModel';
 import './mobileNavbar.css';
 
-interface MobileNavbarProps { dropdownWidth?: string; categoriesOptions?: string; value?: string; }
+interface MobileNavbarProps { dropdownWidth?: string; value?: string; }
 
-const MobileNavbar: React.FunctionComponent<MobileNavbarProps> = ({ dropdownWidth = '300px', categoriesOptions, value = MOBILEDROPDOWN[0].options }) => {
+const MobileNavbar: React.FunctionComponent<MobileNavbarProps> = ({ dropdownWidth = '300px', value = MOBILEDROPDOWN[0].options }) => {
 
     const navigate = useNavigate();
     // const [selectCategory, setSelectCategory] = useState(value);
@@ -44,13 +44,13 @@ const MobileNavbar: React.FunctionComponent<MobileNavbarProps> = ({ dropdownWidt
                 </Select>
             </FormControl>
 
-            <Box 
+            <Box
                 id='mobileNavbar_logo'
                 component={'div'}
             >
-                <img src={IconLogo2}/>
-                <img src={IconLogo1}/>
-                <img src={IconLogo3}/>
+                <img src={IconLogo2} />
+                <img src={IconLogo1} />
+                <img src={IconLogo3} />
             </Box>
 
 
@@ -58,8 +58,20 @@ const MobileNavbar: React.FunctionComponent<MobileNavbarProps> = ({ dropdownWidt
                 id='mobileNavbar_buttons'
                 component={'div'}
             >
-                <ButtonModel  id='mobileNavbar_buttons_style' > <MdSupervisorAccount/> {'Account'} </ButtonModel>
-                <ButtonModel  id='mobileNavbar_buttons_style' > <AiFillShopping/> {'Cart'} </ButtonModel>
+                <ButtonModel
+                    onClick={() => navigate('/user/sign')}
+                    id='mobileNavbar_buttons_style'
+                >
+                    <MdSupervisorAccount />
+                    {'Account'}
+                </ButtonModel>
+                <ButtonModel
+                    onClick={() => navigate('/user/cart')}
+                    id='mobileNavbar_buttons_style'
+                >
+                    <AiFillShopping />
+                    {'Cart'}
+                </ButtonModel>
 
             </Box>
         </Box>

@@ -1,6 +1,6 @@
-import React, {useState, useEffect} from 'react'
-import Section from '../Section/Section'
+import React, { useState, useEffect } from 'react'
 import { Box } from '@mui/material'
+import Section from '../Section/Section'
 import Typography from '@mui/material/Typography';
 import GalleryList from '../GalleryList/GalleryList';
 import FilterController from '../FilterController/FilterController';
@@ -13,33 +13,36 @@ import Icon from '../Icon/Icon';
 import EmailSubmit from '../EmailSubmit/EmailSubmit';
 import Footer from '../Footer/Footer';
 import FooterPayment from '../FooterPayment/FooterPayment';
-import './style.css'
 import MobileNavbar from '../mobileNavbar/MobileNavbar';
-import { MOBILEDROPDOWN } from '../../mock/dropDown.mock';
+import './style.css'
 
 const HomePage: React.FunctionComponent = () => {
 
     const [modeMobile, setModeMobile] = useState(window.innerWidth <= 600);
 
-    console.log(modeMobile)
 
 
+    useEffect(() => {
+        const handleResize = () => {
+            setModeMobile(window.matchMedia('(max-width: 600px)').matches);
+        };
+
+        window.addEventListener('resize', handleResize);
+
+        return () =>  window.removeEventListener('resize', handleResize);
+    }, []);
 
     return (
         <Box component={'div'} className="App">
             {modeMobile ? (
-                <Section id='1'>
-                    <MobileNavbar dropdownWidth="300px" />
-                </Section>
+                <Section id='1'> <MobileNavbar dropdownWidth="300px" /> </Section>
             ) : (
-                <Section id='1'>
-                    <Navbar />
-                </Section>
+                <Section id='1'> <Navbar /> </Section>
             )}
             <Section id='2'>    <Icon />     </Section>
 
             <Section id='3'>
-                <Box className='gallery-list-section'>
+                <Box id='gallery-list-section'>
                     <Typography
                         variant='h4'
                         className='gallery-list-header'
@@ -79,7 +82,7 @@ const HomePage: React.FunctionComponent = () => {
 
             <Section id='7'>  <EmailSubmit />   </Section>
             <Section id='8'>    <Footer />     </Section>
-            <Section id='9'> <FooterPayment /> </Section> 
+            <Section id='9'> <FooterPayment /> </Section>
 
         </Box>)
 }

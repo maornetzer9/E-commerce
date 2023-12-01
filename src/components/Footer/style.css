@@ -1,6 +1,6 @@
-/* Default styles for all screen sizes */
 #footer_container {
     display: flex;
+    margin: auto;
     height: 500px;
     width: 100%;
     align-items: center;
@@ -12,12 +12,41 @@
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-    gap: 30px; 
+    gap: 30px;
+}
+
+#footer_sections_container {
+    display: flex;
+    gap: 220px;
 }
 
 #footer_sections {
     display: flex;
     flex-direction: column;
-    gap: 20px; 
+    gap: 20px;
     text-align: start;
+}
+
+@media (max-width: 768px) {
+    #footer_container {
+        width: fit-content;
+        height: fit-content;
+        margin-bottom: 20px;
+    }
+
+    #footer_sections_container {
+        flex-direction: column;
+        gap: 50px;
+    }
+
+    #footer_inner_container {
+        display: none;
+    }
+
+    #footer_sections {
+        width: 360px;
+        text-align: center;
+        border-bottom: 1px solid black;
+
+    }
 }
