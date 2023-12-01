@@ -1,16 +1,15 @@
 import { Box, Button, SxProps } from '@mui/material'
-import { CommonProps } from '@mui/material/OverridableComponent';
 import React from 'react'
 
-interface ButtonProps { className?: string; sx?: SxProps, styles?: React.CSSProperties, onClick?:  ( event: React.MouseEvent<HTMLButtonElement> ) => void }
+interface ButtonProps { className?: string; id?: string; sx?: SxProps, styles?: React.CSSProperties, onClick?:  ( event: React.MouseEvent<HTMLButtonElement> ) => void }
 
-const ButtonModel: React.FunctionComponent<React.PropsWithChildren<ButtonProps>> = ({ children, sx, className, styles, onClick}) => {
+const ButtonModel: React.FunctionComponent<React.PropsWithChildren<ButtonProps>> = ({ children, id, sx, className, styles, onClick}) => {
     return (
         <Box>
             <Button 
                 classes={{}}
                 onClick={onClick}
-                // className={`${className}`}
+                id={id}
                 className={className}
                 variant='contained'
                 size='large'

@@ -34,7 +34,7 @@
 
 @media screen and (max-width: 600px) {
     #gallery_list {
-        grid-template-columns: 1fr; /* Single column layout for smaller screens */
+        grid-template-columns: 1fr; 
         grid-template-areas: 
             'image0'
             'image1'
@@ -42,6 +42,6 @@
             'image3'
             'image4';
         height: 1250px;
-        width: 90%; /* Full width for smaller screens */
+        width: 90%;
     }
 }
