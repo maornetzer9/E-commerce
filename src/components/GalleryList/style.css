@@ -3,8 +3,8 @@
     height: 700px;
     grid-template-columns: 2fr 1fr 1fr;
     grid-template-areas: 
-    'image0 image1 image2'
-    'image0 image3 image4';
+        'image0 image1 image2'
+        'image0 image3 image4';
     gap: 10px;
     width: 65%;
     aspect-ratio: 3/1.5;
@@ -14,21 +14,34 @@
 
 #gallery_image_0 {
     grid-area: image0;
-
 }
+
 #gallery_image_1 {
     grid-area: image1;
-
 }
+
 #gallery_image_2 {
     grid-area: image2;
-
 }
+
 #gallery_image_3 {
     grid-area: image3;
-
 }
+
 #gallery_image_4 {
     grid-area: image4;
+}
 
+@media screen and (max-width: 600px) {
+    #gallery_list {
+        grid-template-columns: 1fr; /* Single column layout for smaller screens */
+        grid-template-areas: 
+            'image0'
+            'image1'
+            'image2'
+            'image3'
+            'image4';
+        height: 1250px;
+        width: 90%; /* Full width for smaller screens */
+    }
 }

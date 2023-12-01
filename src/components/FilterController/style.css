@@ -1,0 +1,39 @@
+
+.FilterController {
+    display: inline-flex;
+    width: 65%;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1%;
+}
+
+.ButtonContainer {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-right: 30%;
+}
+
+.ButtonStyle {
+    background-color: transparent;
+    color: gray;
+    font-weight: bold;
+    border: none;
+}
+
+
+.IconContainer {
+    width: 17%;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.FilterButton {
+    background-color: #1E2832;
+    text-transform: none;
+    border-radius: 0px;
+}
+

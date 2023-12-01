@@ -13,15 +13,9 @@ import Icon from '../Icon/Icon';
 import EmailSubmit from '../EmailSubmit/EmailSubmit';
 import Footer from '../Footer/Footer';
 import FooterPayment from '../FooterPayment/FooterPayment';
+import './style.css'
 
 const HomePage: React.FunctionComponent = () => {
-
-
-    const logo = { marginTop: '5%' };
-    const typography = { margin: '5%', height: '0' };
-    const galleryListSection = { position: 'absolute', height: '70%', width: '100%' };
-    const galleryListHeader = { position: 'absolute', width: '50%', height: '60%', top: '20%', transform: 'rotate(270deg)' };
-
 
     return (
         <Box component={'div'} className="App">
@@ -30,10 +24,11 @@ const HomePage: React.FunctionComponent = () => {
             <Section id='2'>    <Icon />     </Section>
 
             <Section id='3'>
-                <Box sx={galleryListSection}>
+                <Box className='gallery-list-section'>
                     <Typography
                         variant='h4'
-                        sx={galleryListHeader} > EXPLORE NEW AND POPULAR STYLES
+                        className='gallery-list-header'
+                    > EXPLORE NEW AND POPULAR STYLES
                     </Typography>
                 </Box>
                 <GalleryList />
@@ -41,23 +36,29 @@ const HomePage: React.FunctionComponent = () => {
 
             <Section id='4'>
                 <Typography
+                    marginTop={3}
+                    marginBottom={3}
                     variant="h3"
-                    style={typography} > Or Subscribe To The Newsletter
+                    className='products_list_section'
+                > Or Subscribe To The Newsletter
                 </Typography>
-                <FilterController children={'Filter'} />
+                {/* <FilterController children={'Filter'} /> */}
                 <ProductsList />
             </Section>
 
-            <Section id='5'>
-                <Logo url={zaraLogo} styles={logo} />
+            <Section id='5' sx={{ marginTop: '50px' }}>
+                <Logo url={zaraLogo} className='logo' />
             </Section>
 
             <Section id='6'>
                 <Typography
+                    marginTop={3}
+                    marginBottom={3}
                     variant="h3"
-                    style={typography} > Best Sellers
+                    className='products_list_section'
+                > Best Sellers
                 </Typography>
-                <FilterController children={'Show All'} showIcon={false} />
+                {/* <FilterController children={'Show All'} showIcon={false} /> */}
                 <VerticalList />
             </Section>
 

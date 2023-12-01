@@ -1,0 +1,23 @@
+/* Default styles for all screen sizes */
+#footer_container {
+    display: flex;
+    height: 500px;
+    width: 100%;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+#footer_inner_container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px; 
+}
+
+#footer_sections {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; 
+    text-align: start;
+}

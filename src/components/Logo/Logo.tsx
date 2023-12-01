@@ -2,8 +2,9 @@ import React from 'react'
 import ImageModel from '../ImageModel/ImageModel';
 import { Box } from '@mui/material'
 import ButtonModel from '../ButtonModel/ButtonModel';
+import './logo.css'
 
-interface Props { url: string, styles?: React.CSSProperties; showButton?: boolean}
+interface Props { url: string, styles?: React.CSSProperties; showButton?: boolean; className?: string; }
 
 const Logo: React.FunctionComponent<Props> = ({ url, styles, showButton = true }) => {
     return (
@@ -31,6 +32,7 @@ const Logo: React.FunctionComponent<Props> = ({ url, styles, showButton = true }
                     width={'100%'}
                 >
                     <ButtonModel 
+                        className='logo_button'
                         children={'See Collection'}
                         sx={{
                             display: showButton ? '' : 'none',

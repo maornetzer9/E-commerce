@@ -27,7 +27,6 @@
     justify-content: center;
     margin-left: 1%;
     padding: 20px;
-    align-items: start;
     flex-direction: column;
     gap: 20px;
 }
@@ -40,7 +39,7 @@
 
 #sign_reset_password_link {
     font-weight: bold;
-    color: #F47458;
+    color: #f47458;
 }
 
 #sign_button_container {
@@ -74,14 +73,11 @@
         width: 100%;
     }
 
-    
     #sign_reset_password_container {
         flex-direction: column;
     }
 
-
     #sign_background {
         background: linear-gradient(to right, white 50%, #ffceae 50%);
-       
     }
 }

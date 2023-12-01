@@ -1,0 +1,40 @@
+
+.gallery-list-section {
+    position: absolute;
+    height: 70%;
+    width: 100%;
+}
+
+.gallery-list-header {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    left: 7%;
+    transform: rotate(270deg);
+}
+
+@media only screen and (max-width: 768px) {
+    .products_list_section {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    .gallery-list-section {
+        transform: rotate(90deg);
+        position: relative;
+        width: 100%;
+        margin-bottom: 15%;
+        font-weight: bold;
+        flex-direction: row;
+    }
+
+    .gallery-list-header {
+        position: relative;
+        font-weight: bold;
+        width: 100%;
+    }
+}
+

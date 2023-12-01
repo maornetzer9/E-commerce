@@ -8,7 +8,6 @@ import { Link, useNavigate } from 'react-router-dom'
 import signBackground from '../../assets/icons/signIn-Icon.png'
 import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
 import Logo from '../Logo/Logo'
-import './style.css'
 
 
 const Sign: React.FunctionComponent = () => {

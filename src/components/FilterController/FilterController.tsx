@@ -1,111 +1,105 @@
-import React, { ReactNode } from 'react'
-import { Box, Button } from '@mui/material'
-import { BiSolidFilterAlt } from "react-icons/bi";
+// FilterController.jsx
+
+import React, { ReactNode } from 'react';
+import { Box, Button } from '@mui/material';
+import { BiSolidFilterAlt } from 'react-icons/bi';
+import './style.css'; // Import the CSS file
 
 interface IFilterController { children: ReactNode; styles?: React.CSSProperties; showIcon?: boolean }
 
 const FilterController: React.FunctionComponent<IFilterController> = ({ children, styles, showIcon = true }) => {
     return (
         <Box
-            display={'inline-flex'}
-            width={'67%'}
-            alignItems={'center'}
-            justifyContent={'center'}
-            marginLeft={2.5}
+            className="FilterController"
         >
-
             <Box
-                component={'div'}
-                width={600}
-                display={'flex'}
-                justifyContent={'space-evenly'}
+                className="ButtonContainer"
             >
                 <Button
-                    style={{
+                    className="ButtonStyle"
+                    variant="text"
+                    sx={{
                         backgroundColor: 'transparent',
-                        color: ' gray',
+                        color: 'gray',
                         fontWeight: 'bold',
-                        border: 'none'
+                        border: 'none',
                     }}
-                    variant='outlined'
-                    color='primary'
-                >  All Products
+                >
+                    All Products
                 </Button>
                 <Button
-                    style={{
+                    className="ButtonStyle"
+                    variant='text'
+                    sx={{
                         backgroundColor: 'transparent',
-                        color: ' gray',
+                        color: 'gray',
                         fontWeight: 'bold',
-                        border: 'none'
+                        border: 'none',
                     }}
-                >  T-Shirt
+                >
+                    T-Shirt
                 </Button>
                 <Button
-                    style={{
+                    className="ButtonStyle"
+                    variant="text"
+                    sx={{
                         backgroundColor: 'transparent',
-                        color: ' gray',
+                        color: 'gray',
                         fontWeight: 'bold',
-                        border: 'none'
+                        border: 'none',
                     }}
-                    variant='outlined'
-                >  Hoodies
+                >
+                    Hoodies
                 </Button>
                 <Button
-                    style={{
+                    className="ButtonStyle"
+                    variant='text'
+                    sx={{
                         backgroundColor: 'transparent',
-                        color: ' gray',
+                        color: 'gray',
                         fontWeight: 'bold',
-                        border: 'none'
+                        border: 'none',
                     }}
-                    color='primary'
-                >  Jacket
+                >
+                    Jacket
                 </Button>
             </Box>
 
             <Box
-                component={'div'}
-                display={'flex'}
-                height={100}
-                width={'100%'}
-                alignItems={'center'}
-                justifyContent={'flex-end'}
-
-            >
-                <Box
-                    component={'div'}
-                    width={'17%'}
-                    height={60}
-                    display={'flex'}
-                    justifyContent={'center'}
-                    alignItems={'center'}
+                className="IconContainer">
+                <Button
+                    className="FilterButton"
+                    variant="contained"
+                    sx={{
+                        textTransform: 'none',
+                        backgroundColor: '#1E2832',
+                        '&:hover': {
+                            transition: '1s',
+                            backgroundColor: '#FF6F61',
+                        }
+                    }}
                 >
-                    <Button
-                        sx={{
-                            backgroundColor: '#1E2832',
-                            textTransform: 'none',
-                            borderRadius: '0px',
-                        }}
-                        variant='contained'
-                        color='warning'
+                    <Box
+                        style={styles}
+                        component="div"
+                        width="fit-content"
+                        display="flex"
+                        alignItems="center"
+                        justifyContent="center"
+                        gap={1}
                     >
-                        <Box
-                            style={styles}
-                            component={'div'}
-                            width={'fit-content'}
-                            display={'flex'}
-                            alignItems={'center'}
-                            justifyContent={'center'}
-                            gap={1}
-                        >
-                            <BiSolidFilterAlt fontSize={19} display={showIcon ? 'flex' : 'none'}/> {children}
-                        </Box>
-
-                    </Button>
-                </Box>
+                        <BiSolidFilterAlt
+                            fontSize={19}
+                            style={{
+                                display: showIcon ? 'flex' : 'none'
+                            }}
+                        />
+                        {children}
+                    </Box>
+                </Button>
             </Box>
         </Box>
-    )
-}
+    );
+};
 
-
-export default FilterController
+export default FilterController;
