@@ -59,6 +59,9 @@ const Footer: React.FunctionComponent = () => {
                 >
                     <Typography
                         variant='h6'
+                        color={window.innerWidth <= 600 ? '#FF6F61' : 'black'}
+                        fontWeight={window.innerWidth <= 600 ? 'bold' : ''}
+
                     >
                         CATALOG
                     </Typography>
@@ -75,6 +78,9 @@ const Footer: React.FunctionComponent = () => {
                 >
                     <Typography
                         variant='h6'
+                        color={window.innerWidth <= 600 ? '#FF6F61' : 'black'}
+                        fontWeight={window.innerWidth <= 600 ? 'bold' : ''}
+
                     >
                         ABOUT US
                     </Typography>
@@ -90,6 +96,8 @@ const Footer: React.FunctionComponent = () => {
                 >
                     <Typography
                         variant='h6'
+                        color={window.innerWidth <= 600 ? '#FF6F61' : 'black'}
+                        fontWeight={window.innerWidth <= 600 ? 'bold' : ''}
                     >
                         CUSTOMER SERVICES
                     </Typography>

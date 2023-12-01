@@ -31,22 +31,23 @@
     #footer_container {
         width: fit-content;
         height: fit-content;
-        margin-bottom: 20px;
+        margin-bottom: 25px;
     }
 
     #footer_sections_container {
         flex-direction: column;
-        gap: 50px;
+        gap: 40px;
     }
 
     #footer_inner_container {
         display: none;
     }
-
     #footer_sections {
         width: 360px;
+        padding: 10px;
         text-align: center;
-        border-bottom: 1px solid black;
-
+        box-shadow: 3px 4px 15px 4px lightgray;
+        border-radius: 250px;
+        transform: scale(0.9);
     }
 }

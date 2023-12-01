@@ -14,34 +14,27 @@ import EmailSubmit from '../EmailSubmit/EmailSubmit';
 import Footer from '../Footer/Footer';
 import FooterPayment from '../FooterPayment/FooterPayment';
 import MobileNavbar from '../mobileNavbar/MobileNavbar';
-import './style.css'
+import './homePage.css'
 
 const HomePage: React.FunctionComponent = () => {
 
-    const [modeMobile, setModeMobile] = useState(window.innerWidth <= 600);
+    const [mobileMode, setMobileMode] = useState(window.innerWidth <= 600);
 
+    const handleResize = () => setMobileMode(window.matchMedia('(max-width: 600px)').matches);
 
-
-    useEffect(() => {
-        const handleResize = () => {
-            setModeMobile(window.matchMedia('(max-width: 600px)').matches);
-        };
-
-        window.addEventListener('resize', handleResize);
-
-        return () =>  window.removeEventListener('resize', handleResize);
-    }, []);
+    useEffect(() => { window.addEventListener('resize', handleResize) }, []);
 
     return (
         <Box component={'div'} className="App">
-            {modeMobile ? (
-                <Section id='1'> <MobileNavbar dropdownWidth="300px" /> </Section>
-            ) : (
-                <Section id='1'> <Navbar /> </Section>
-            )}
-            <Section id='2'>    <Icon />     </Section>
+            { mobileMode ?
+                (
+                    <Section id='1'> <MobileNavbar dropdownWidth="300px" /> </Section>
+                )
+                : (<Section id='2'> <Navbar /> </Section>)
+            }
+            <Section id='3'>  <Icon />  </Section>
 
-            <Section id='3'>
+            <Section id='4'>
                 <Box id='gallery-list-section'>
                     <Typography
                         variant='h4'
@@ -52,7 +45,7 @@ const HomePage: React.FunctionComponent = () => {
                 <GalleryList />
             </Section>
 
-            <Section id='4'>
+            <Section id='5'>
                 <Typography
                     marginTop={3}
                     marginBottom={3}
@@ -64,11 +57,11 @@ const HomePage: React.FunctionComponent = () => {
                 <ProductsList />
             </Section>
 
-            <Section id='5' sx={{ marginTop: '50px' }}>
+            <Section id='6' sx={{ marginTop: '50px' }}>
                 <Logo url={zaraLogo} className='logo' />
             </Section>
 
-            <Section id='6'>
+            <Section id='7'>
                 <Typography
                     marginTop={3}
                     marginBottom={3}
@@ -80,9 +73,9 @@ const HomePage: React.FunctionComponent = () => {
                 <VerticalList />
             </Section>
 
-            <Section id='7'>  <EmailSubmit />   </Section>
-            <Section id='8'>    <Footer />     </Section>
-            <Section id='9'> <FooterPayment /> </Section>
+            <Section id='8'>  <EmailSubmit />   </Section>
+            <Section id='9'>    <Footer />     </Section>
+            <Section id='10'> <FooterPayment /> </Section>
 
         </Box>)
 }
