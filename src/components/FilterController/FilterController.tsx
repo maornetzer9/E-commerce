@@ -1,5 +1,3 @@
-// FilterController.jsx
-
 import React, { ReactNode } from 'react';
 import { Box, Button } from '@mui/material';
 import { BiSolidFilterAlt } from 'react-icons/bi';
@@ -66,6 +64,7 @@ const FilterController: React.FunctionComponent<IFilterController> = ({ children
             </Box>
 
             <Box
+                id='filter_button'
                 className="IconContainer">
                 <Button
                     className="FilterButton"

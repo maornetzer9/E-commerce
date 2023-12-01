@@ -42,7 +42,7 @@ const HomePage: React.FunctionComponent = () => {
                     className='products_list_section'
                 > Or Subscribe To The Newsletter
                 </Typography>
-                {/* <FilterController children={'Filter'} /> */}
+                <FilterController children={'Filter'} />
                 <ProductsList />
             </Section>
 
@@ -58,7 +58,7 @@ const HomePage: React.FunctionComponent = () => {
                     className='products_list_section'
                 > Best Sellers
                 </Typography>
-                {/* <FilterController children={'Show All'} showIcon={false} /> */}
+                <FilterController children={'Show All'} showIcon={false} />
                 <VerticalList />
             </Section>
 

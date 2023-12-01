@@ -1,4 +1,4 @@
-
+/* Default styles */
 .FilterController {
     display: inline-flex;
     width: 65%;
@@ -22,7 +22,6 @@
     border: none;
 }
 
-
 .IconContainer {
     width: 17%;
     height: 60px;
@@ -37,3 +36,21 @@
     border-radius: 0px;
 }
 
+/* Responsive styles */
+@media only screen and (max-width: 768px) {
+    .FilterController {
+        display: flex;
+        justify-content: center;
+        flex-direction: column-reverse;
+        width: 100%;
+        margin-bottom: 2%;
+    }
+
+    .ButtonContainer {
+        margin-right: -15%;
+    }
+
+    #filter_button {
+        width: 200px;
+    }
+}
