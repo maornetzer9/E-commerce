@@ -30,7 +30,7 @@
 }
 
 .FilterButton {
-    background-color: #1E2832;
+    background-color: #1e2832;
     text-transform: none;
     border-radius: 0px;
 }
@@ -39,13 +39,16 @@
     .FilterController {
         display: flex;
         justify-content: center;
-        text-align: center;
+        align-items: center;
         flex-direction: column-reverse;
         width: 100%;
     }
 
     .ButtonContainer {
-        margin-right: -10%;
+        display: flex;
+        width: fit-content;
+        justify-content: center;
+        margin-right: 0;
     }
 
     #filter_button {
