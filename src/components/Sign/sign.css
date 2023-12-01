@@ -1,11 +1,8 @@
 #sign_background {
-    /* background: linear-gradient(to right, white 50%, #ffceae 50%); */
-
     display: flex;
     justify-content: center;
-    background-image: url('../../assets/covers/Cover.png');   
-    background-repeat: no-repeat;
-    background-size: cover;
+    background: url("../../assets/icons/Frame.png");
+    /* background: linear-gradient(to right, white 50%, #ffceae 50%); */
 }
 
 .sign_icon {
@@ -84,12 +81,7 @@
     }
 
     #sign_background {
+        background: url("../../assets/icons/Frame.png");
         /* background: linear-gradient(to right, white 50%, #ffceae 50%); */
-        
-        display: flex;
-        justify-content: center;
-        background-image: url('../../assets/covers/Cover.png');   
-        background-repeat: no-repeat;
-        background-size: cover;
     }
 }
