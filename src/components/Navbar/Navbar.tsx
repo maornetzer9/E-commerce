@@ -13,9 +13,11 @@ import InputModel from '../InputModel/InputModel';
 import ButtonModel from '../ButtonModel/ButtonModel';
 import Frame from '../../assets/icons/Frame.png'
 import './style.css'
+import { useNavigate } from 'react-router-dom';
 
 const Navbar: React.FunctionComponent = () => {
 
+    const navigate = useNavigate();
     const [openSearch, setOpenSearch] = React.useState(false)
 
     const buttons =
@@ -83,6 +85,7 @@ const Navbar: React.FunctionComponent = () => {
                             '&:hover': { backgroundColor: 'transparent', boxShadow: 'none', color: '#FF6F61' }
                         }}>
                         <Box
+                            onClick={() => navigate('/user/sign')}
                             component={'div'}
                             display={'flex'}
                             justifyContent={'center'}

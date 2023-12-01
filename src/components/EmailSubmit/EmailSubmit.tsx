@@ -68,8 +68,9 @@ const EmailSubmit: React.FunctionComponent = () => {
                     className='form_submit_inner_container'
                 >
                     <TextField
+                        type='text'
                         variant='standard'
-                        value={'Email Address... '}
+                        placeholder='Email Address... '
                         sx={{
                             borderBottom: '1px solid black',
                             width: '70%',

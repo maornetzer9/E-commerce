@@ -3,9 +3,9 @@ import ImageModel from '../ImageModel/ImageModel';
 import { Box } from '@mui/material'
 import ButtonModel from '../ButtonModel/ButtonModel';
 
-interface Props { url: string, styles?: React.CSSProperties }
+interface Props { url: string, styles?: React.CSSProperties; showButton?: boolean}
 
-const Logo: React.FunctionComponent<Props> = ({ url, styles }) => {
+const Logo: React.FunctionComponent<Props> = ({ url, styles, showButton = true }) => {
     return (
         <Box
             component={'div'}
@@ -13,7 +13,6 @@ const Logo: React.FunctionComponent<Props> = ({ url, styles }) => {
             alignItems={'center'}
             position={'relative'}
             width={'100%'}
-            border={'1px solid black'}
         >
             <Box
                 component={'div'}
@@ -34,6 +33,7 @@ const Logo: React.FunctionComponent<Props> = ({ url, styles }) => {
                     <ButtonModel 
                         children={'See Collection'}
                         sx={{
+                            display: showButton ? '' : 'none',
                             height: '75px',
                             width:'250px',
                             alignItems: 'center',

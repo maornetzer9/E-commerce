@@ -10,7 +10,6 @@ import sportJacket from '../assets/products/sportJacket.png';
 
 export interface IProduct {url: string; description: string; price: string; salePrice?: string; title: string};
 
-
 export const PRODUCTS:IProduct[] = 
 [
     {
