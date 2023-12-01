@@ -2,9 +2,9 @@
     display: grid;
     height: 700px;
     grid-template-columns: 2fr 1fr 1fr;
-    grid-template-areas: 
-        'image0 image1 image2'
-        'image0 image3 image4';
+    grid-template-areas:
+        "image0 image1 image2"
+        "image0 image3 image4";
     gap: 10px;
     width: 65%;
     aspect-ratio: 3/1.5;
@@ -34,13 +34,13 @@
 
 @media screen and (max-width: 600px) {
     #gallery_list {
-        grid-template-columns: 1fr; 
-        grid-template-areas: 
-            'image0'
-            'image1'
-            'image2'
-            'image3'
-            'image4';
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "image0"
+            "image1"
+            "image2"
+            "image3"
+            "image4";
         height: 1250px;
         width: 90%;
     }

@@ -1,9 +1,9 @@
-/* TODO: Need to see why we need to import this over and over again when page load / refresh */
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 880px) {
     #logo_button {
-        position: absolute;
-        left: 43%;
-        height: 30px;
+        position: relative;
+        left: 10%;
+        bottom: 10px;
+        height: 20px;
         width: 140px;
         font-size: 14px;
     }

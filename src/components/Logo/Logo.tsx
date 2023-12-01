@@ -17,11 +17,7 @@ const Logo: React.FunctionComponent<Props> = ({ url, styles, showButton = true }
         >
             <Box
                 component={'div'}
-                display={'flex'}
-                justifyContent={'center'}
-                alignItems={'center'}
-                width={'100%'}
-                position={'relative'}
+                margin={window.innerWidth <= 600 ? 2 : 0}
             >
                 <ImageModel url={url} styles={styles} preview={false} />
 

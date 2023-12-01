@@ -7,9 +7,9 @@ import { MdOutlinePreview } from "react-icons/md";
 import { LuSearchSlash } from "react-icons/lu";
 import "../../animations.css"
 
-interface Props { url?: string; preview: boolean; styles?: React.CSSProperties; showIconPreview?: boolean; };
+interface Props { url?: string; preview: boolean; styles?: React.CSSProperties; showIconPreview?: boolean; id?: string };
 
-const ImageModel: React.FunctionComponent<Props> = ({ url, preview = false, styles = {}, showIconPreview = true}) => {
+const ImageModel: React.FunctionComponent<Props> = ({ url, preview = false, styles = {}, showIconPreview = true, id }) => {
 
     const [isPreview, setIsPreview] = useState(false);
     const [isHoverPreview, setIsHoverPreview] = useState(false);
@@ -71,13 +71,17 @@ const ImageModel: React.FunctionComponent<Props> = ({ url, preview = false, styl
                         cursor: preview ? 'pointer' : 'auto',
                         opacity: 1,
                     }}>
-                    <img src={url} alt="" style={{
-                        width: '100%',
-                        height: '100%',
-                        ...styles,
-                    }} />
+                    <img
+                        id={id}
+                        src={url}
+                        alt=""
+                        style={{
+                            width: '100%',
+                            height: '100%',
+                            ...styles,
+                        }} />
                 </ImageListItem>
-                
+
                 {isHoverPreview && preview && (
                     <Box
                         component={'div'}
@@ -96,7 +100,7 @@ const ImageModel: React.FunctionComponent<Props> = ({ url, preview = false, styl
                             zIndex: 1,
                             opacity: 0.5,
                         }}>
-                        <MdOutlinePreview display={showIconPreview ? 'block' : 'none'} fontSize={'50PX'} color='#fff'/>
+                        <MdOutlinePreview display={showIconPreview ? 'block' : 'none'} fontSize={'50PX'} color='#fff' />
                     </Box>
                 )}
             </Box>
@@ -124,20 +128,20 @@ const ImageModel: React.FunctionComponent<Props> = ({ url, preview = false, styl
                             height: window.innerHeight,
                         }} />
 
-                    <ImageListItem 
-                        className='fade-in' 
+                    <ImageListItem
+                        className='fade-in'
                         onClick={handleTogglePreview} sx={{
-                        width: size + 'px',
-                        height: 'auto',
-                        position: 'absolute',
-                        top: '50%',
-                        left: '50%',
-                        transform: `translate(-50%, -50%) rotate(${rotate}deg)`,
-                        transition: '0.5s',
-                        userSelect: 'none',
-                        cursor: 'auto',
-                        zIndex: 2,
-                    }}>
+                            width: size + 'px',
+                            height: 'auto',
+                            position: 'absolute',
+                            top: '50%',
+                            left: '50%',
+                            transform: `translate(-50%, -50%) rotate(${rotate}deg)`,
+                            transition: '0.5s',
+                            userSelect: 'none',
+                            cursor: 'auto',
+                            zIndex: 2,
+                        }}>
                         <img src={url} alt="" />
                     </ImageListItem>
                     <Box

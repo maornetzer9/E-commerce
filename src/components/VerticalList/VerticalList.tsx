@@ -15,13 +15,15 @@ const VerticalList: React.FunctionComponent<IVerticalList> = () => {
     const scroll = (direction: 'left' | 'right') => {
         const container = document.getElementById('vertical_list');
         if (container) {
-            const scrollAmount = 950;
+            let scrollAmount = 950;
             if (direction === 'right') {
 
+                window.innerWidth <= 600 ? scrollAmount = 315 : scrollAmount = 950
                 container.scrollLeft += scrollAmount;
                 setLeftArrowPosition(Math.max(leftArrowPosition - scrollAmount, 0));
             }
             else {
+                window.innerWidth <= 600 ? scrollAmount = 315 : scrollAmount = 950
                 container.scrollLeft -= scrollAmount;
                 setRightArrowPosition(Math.max(rightArrowPosition - scrollAmount, 0));
             }
@@ -45,7 +47,7 @@ const VerticalList: React.FunctionComponent<IVerticalList> = () => {
                 alignItems={'center'}
                 overflow={'hidden'}
                 gap={2}
-                width={'66%'}
+                width={window.innerWidth <= 600 ? '75%' : '66%'}
                 sx={{ scrollBehavior: 'smooth' }}
             >
                 {VERTICAL_LIST.map((product, index) => (
