@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import Section from '../Section/Section'
 import { Box } from '@mui/material'
 import Typography from '@mui/material/Typography';
@@ -14,13 +14,28 @@ import EmailSubmit from '../EmailSubmit/EmailSubmit';
 import Footer from '../Footer/Footer';
 import FooterPayment from '../FooterPayment/FooterPayment';
 import './style.css'
+import MobileNavbar from '../mobileNavbar/MobileNavbar';
+import { MOBILEDROPDOWN } from '../../mock/dropDown.mock';
 
 const HomePage: React.FunctionComponent = () => {
 
+    const [modeMobile, setModeMobile] = useState(window.innerWidth <= 600);
+
+    console.log(modeMobile)
+
+
+
     return (
         <Box component={'div'} className="App">
-
-            <Section id='1'>   <Navbar />    </Section>
+            {modeMobile ? (
+                <Section id='1'>
+                    <MobileNavbar dropdownWidth="300px" />
+                </Section>
+            ) : (
+                <Section id='1'>
+                    <Navbar />
+                </Section>
+            )}
             <Section id='2'>    <Icon />     </Section>
 
             <Section id='3'>
@@ -64,7 +79,7 @@ const HomePage: React.FunctionComponent = () => {
 
             <Section id='7'>  <EmailSubmit />   </Section>
             <Section id='8'>    <Footer />     </Section>
-            <Section id='9'> <FooterPayment /> </Section>
+            <Section id='9'> <FooterPayment /> </Section> 
 
         </Box>)
 }
