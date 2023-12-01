@@ -4,6 +4,7 @@ import { Box, IconButton } from '@mui/material';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
 import { VERTICAL_LIST } from '../../mock/verticalList';
+import './verticalList.css'
 
 interface IVerticalList { url?: string; description?: string; price?: string; salePrice?: string; title?: string; key?: number; }
 
@@ -14,16 +15,20 @@ const VerticalList: React.FunctionComponent<IVerticalList> = () => {
 
     const scroll = (direction: 'left' | 'right') => {
         const container = document.getElementById('vertical_list');
-        if (container) {
+        if (container) 
+        {
             let scrollAmount = 950;
-            if (direction === 'right') {
+            if (direction === 'right') 
+            {
+                window.innerWidth <= 600 ? scrollAmount = 320 : scrollAmount = 950
 
-                window.innerWidth <= 600 ? scrollAmount = 315 : scrollAmount = 950
                 container.scrollLeft += scrollAmount;
                 setLeftArrowPosition(Math.max(leftArrowPosition - scrollAmount, 0));
             }
-            else {
-                window.innerWidth <= 600 ? scrollAmount = 315 : scrollAmount = 950
+            else 
+            {
+                window.innerWidth <= 600 ? scrollAmount = 320 : scrollAmount = 950
+                
                 container.scrollLeft -= scrollAmount;
                 setRightArrowPosition(Math.max(rightArrowPosition - scrollAmount, 0));
             }
@@ -32,21 +37,12 @@ const VerticalList: React.FunctionComponent<IVerticalList> = () => {
 
     return (
         <Box
+            id='vertical_list_container'
             component={'div'}
-            display={'flex'}
-            justifyContent={'center'}
-            alignItems={'center'}
-            position={'relative'}
-            height={'500px'}
-
         >
             <Box
                 id="vertical_list"
                 component={'div'}
-                display={'flex'}
-                alignItems={'center'}
-                overflow={'hidden'}
-                gap={2}
                 width={window.innerWidth <= 600 ? '75%' : '66%'}
                 sx={{ scrollBehavior: 'smooth' }}
             >
