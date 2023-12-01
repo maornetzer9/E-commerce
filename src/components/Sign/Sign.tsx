@@ -44,12 +44,12 @@ const Sign: React.FunctionComponent = () => {
             component={'div'}
             id='sign_background'
         >
-            <Box
+            {/* <Box
                 component={'div'}
                 className='sign_icon'
             >
                 <Logo url={signBackground} showButton={false} />
-            </Box>
+            </Box> */}
 
             <Box
                 id='sign_container'

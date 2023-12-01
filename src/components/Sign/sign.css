@@ -1,5 +1,11 @@
 #sign_background {
-    background: linear-gradient(to right, white 50%, #ffceae 50%);
+    /* background: linear-gradient(to right, white 50%, #ffceae 50%); */
+
+    display: flex;
+    justify-content: center;
+    background-image: url('../../assets/covers/Cover.png');   
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .sign_icon {
@@ -78,6 +84,12 @@
     }
 
     #sign_background {
-        background: linear-gradient(to right, white 50%, #ffceae 50%);
+        /* background: linear-gradient(to right, white 50%, #ffceae 50%); */
+        
+        display: flex;
+        justify-content: center;
+        background-image: url('../../assets/covers/Cover.png');   
+        background-repeat: no-repeat;
+        background-size: cover;
     }
 }
