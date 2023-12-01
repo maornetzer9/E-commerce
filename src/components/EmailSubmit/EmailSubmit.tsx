@@ -31,6 +31,7 @@ const EmailSubmit: React.FunctionComponent = () => {
             <Typography
                 fontWeight={'bold'}
                 fontSize={'45px'}
+                marginBottom={window.innerWidth <= 600 ? 2 : 0}
                 variant='h3'
             >
                 Follow Products And Discounts On Instagram
