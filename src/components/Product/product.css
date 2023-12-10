@@ -1,6 +1,7 @@
 #product_list {
     margin: auto;
     display: grid;
+    justify-content: center;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-areas: "image0 image1 image2 image3";
     width: 65%;
@@ -24,6 +25,7 @@
     align-items: flex-start;
     width: 100%;
 }
+
 
 .price {
     display: flex;

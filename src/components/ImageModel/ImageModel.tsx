@@ -130,7 +130,8 @@ const ImageModel: React.FunctionComponent<Props> = ({ url, preview = false, styl
 
                     <ImageListItem
                         className='fade-in'
-                        onClick={handleTogglePreview} sx={{
+                        onClick={handleTogglePreview}
+                        sx={{
                             width: size + 'px',
                             height: 'auto',
                             position: 'absolute',

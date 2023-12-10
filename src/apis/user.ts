@@ -16,8 +16,7 @@ class UserApiRequest
             const body = JSON.stringify({email, password});
 
             const response: Response = await fetch(this.baseUrl, {method, headers, body});
-            
-            const response_json: object = await response.json();
+            const response_json: any = await response.json();
 
             return response_json;
         }
@@ -25,6 +24,25 @@ class UserApiRequest
         {
             console.log(err);
             throw err
+        }
+    }
+
+
+    async getProducts()
+    {
+        try
+        {
+            const method = 'GET';
+            const headers: Record<string, string> = {'Accept':'Application/json', 'Content-Type':'Application/json'};
+
+            const response: Response = await fetch(this.baseUrl, {method, headers});
+            const response_json: any = await response.json();
+            
+            return response_json;
+        }
+        catch(err)
+        {
+            console.log(err);
         }
     }
 }

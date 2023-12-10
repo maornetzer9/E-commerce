@@ -8,6 +8,7 @@ import facebook from '../../assets/icons/facebook.png';
 import twitter from '../../assets/icons/twitter.png'
 import instagram from '../../assets/icons/instagram.png'
 import Typography from '@mui/material/Typography';
+import { Link } from 'react-router-dom';
 import './footer.css'
 
 
@@ -65,11 +66,21 @@ const Footer: React.FunctionComponent = () => {
                     >
                         CATALOG
                     </Typography>
-                    <Typography variant='body2' color={'#1E2832'} sx={{ '&:hover': { color: '#FF6F61', cursor: 'pointer' } }}> Necklaces </Typography>
-                    <Typography variant='body2' color={'#1E2832'} sx={{ '&:hover': { color: '#FF6F61', cursor: 'pointer' } }}> Hoodies </Typography>
-                    <Typography variant='body2' color={'#1E2832'} sx={{ '&:hover': { color: '#FF6F61', cursor: 'pointer' } }}> Jewelry Box </Typography>
-                    <Typography variant='body2' color={'#1E2832'} sx={{ '&:hover': { color: '#FF6F61', cursor: 'pointer' } }}> T-Shirt </Typography>
-                    <Typography variant='body2' color={'#1E2832'} sx={{ '&:hover': { color: '#FF6F61', cursor: 'pointer' } }}> Jacket </Typography>
+                    <Link to={'/NeckLaces'} style={{ textDecoration: 'none', color: '#1E2832' }}>
+                        <Typography variant='body2' sx={{ '&:hover': { color: '#FF6F61', cursor: 'pointer' } }}> Necklaces  </Typography>
+                    </Link>
+                    <Link to={'/Hoodies'} style={{ textDecoration: 'none', color: '#1E2832' }}>
+                        <Typography variant='body2' sx={{ '&:hover': { color: '#FF6F61', cursor: 'pointer' } }}> Hoodies    </Typography>
+                    </Link>
+                    <Link to={'/Jewelry-Box'} style={{ textDecoration: 'none', color: '#1E2832' }}>
+                        <Typography variant='body2' sx={{ '&:hover': { color: '#FF6F61', cursor: 'pointer' } }}> Jewelry Box</Typography>
+                    </Link>
+                    <Link to={'/T-Shirt'} style={{ textDecoration: 'none', color: '#1E2832' }}>
+                        <Typography variant='body2' sx={{ '&:hover': { color: '#FF6F61', cursor: 'pointer' } }}> T-Shirt    </Typography>
+                    </Link>
+                    <Link to={'/Jacket'} style={{ textDecoration: 'none', color: '#1E2832' }}>
+                        <Typography variant='body2' sx={{ '&:hover': { color: '#FF6F61', cursor: 'pointer' } }}> Jacket     </Typography>
+                    </Link>
 
                 </Box>
                 <Box
@@ -84,11 +95,21 @@ const Footer: React.FunctionComponent = () => {
                     >
                         ABOUT US
                     </Typography>
-                    <Typography variant='body2' color={'#1E2832'} sx={{ '&:hover': { color: '#FF6F61', cursor: 'pointer' } }}> Our Producers </Typography>
-                    <Typography variant='body2' color={'#1E2832'} sx={{ '&:hover': { color: '#FF6F61', cursor: 'pointer' } }}> Sitemap </Typography>
-                    <Typography variant='body2' color={'#1E2832'} sx={{ '&:hover': { color: '#FF6F61', cursor: 'pointer' } }}> FAQ </Typography>
-                    <Typography variant='body2' color={'#1E2832'} sx={{ '&:hover': { color: '#FF6F61', cursor: 'pointer' } }}> About Us </Typography>
-                    <Typography variant='body2' color={'#1E2832'} sx={{ '&:hover': { color: '#FF6F61', cursor: 'pointer' } }}> Terms & Conditions </Typography>
+                    <Link to={'/Our-Producers'} style={{ textDecoration: 'none', color: '#1E2832' }}>
+                        <Typography variant='body2' sx={{ '&:hover': { color: '#FF6F61', cursor: 'pointer' } }}> Our Producers </Typography>
+                    </Link>
+                    <Link to={'/Sitemap'} style={{ textDecoration: 'none', color: '#1E2832' }}>
+                        <Typography variant='body2' sx={{ '&:hover': { color: '#FF6F61', cursor: 'pointer' } }}> Sitemap </Typography>
+                    </Link>
+                    <Link to={'FAQ/'} style={{ textDecoration: 'none', color: '#1E2832' }}>
+                        <Typography variant='body2' sx={{ '&:hover': { color: '#FF6F61', cursor: 'pointer' } }}> FAQ </Typography>
+                    </Link>
+                    <Link to={'/About Us'} style={{ textDecoration: 'none', color: '#1E2832' }}>
+                        <Typography variant='body2' sx={{ '&:hover': { color: '#FF6F61', cursor: 'pointer' } }}> About Us </Typography>
+                    </Link>
+                    <Link to={'/Terms & Condition'} style={{ textDecoration: 'none', color: '#1E2832' }}>
+                        <Typography variant='body2' sx={{ '&:hover': { color: '#FF6F61', cursor: 'pointer' } }}> Terms & Conditions </Typography>
+                    </Link>
                 </Box>
                 <Box
                     id='footer_sections'
@@ -101,11 +122,21 @@ const Footer: React.FunctionComponent = () => {
                     >
                         CUSTOMER SERVICES
                     </Typography>
-                    <Typography variant='body2' color={'#1E2832'} sx={{ '&:hover': { color: '#FF6F61', cursor: 'pointer' } }}> Contact Us </Typography>
-                    <Typography variant='body2' color={'#1E2832'} sx={{ '&:hover': { color: '#FF6F61', cursor: 'pointer' } }}> Track Your Order </Typography>
-                    <Typography variant='body2' color={'#1E2832'} sx={{ '&:hover': { color: '#FF6F61', cursor: 'pointer' } }}> Product Care & Repair </Typography>
-                    <Typography variant='body2' color={'#1E2832'} sx={{ '&:hover': { color: '#FF6F61', cursor: 'pointer' } }}> Book An Appointment </Typography>
-                    <Typography variant='body2' color={'#1E2832'} sx={{ '&:hover': { color: '#FF6F61', cursor: 'pointer' } }}> Shipping & Returns </Typography>
+                    <Link to={'/Contact-Us'} style={{ textDecoration: 'none', color: '#1E2832' }}>
+                        <Typography variant='body2' sx={{ '&:hover': { color: '#FF6F61', cursor: 'pointer' } }}> Contact Us            </Typography>
+                    </Link>
+                    <Link to={'/Track-Your-Order'} style={{ textDecoration: 'none', color: '#1E2832' }}>
+                        <Typography variant='body2' sx={{ '&:hover': { color: '#FF6F61', cursor: 'pointer' } }}> Track Your Order      </Typography>
+                    </Link>
+                    <Link to={'/Product Care & Repair'} style={{ textDecoration: 'none', color: '#1E2832' }}>
+                        <Typography variant='body2' sx={{ '&:hover': { color: '#FF6F61', cursor: 'pointer' } }}> Product Care & Repair </Typography>
+                    </Link>
+                    <Link to={'/Book An-Appointment'} style={{ textDecoration: 'none', color: '#1E2832' }}>
+                        <Typography variant='body2' sx={{ '&:hover': { color: '#FF6F61', cursor: 'pointer' } }}> Book An Appointment   </Typography>
+                    </Link>
+                    <Link to={'/Shipping-Returns'} style={{ textDecoration: 'none', color: '#1E2832' }}>
+                        <Typography variant='body2' sx={{ '&:hover': { color: '#FF6F61', cursor: 'pointer' } }}> Shipping & Returns    </Typography>
+                    </Link>
                 </Box>
             </Box>
         </Box>

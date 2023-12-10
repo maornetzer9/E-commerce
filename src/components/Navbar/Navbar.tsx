@@ -126,6 +126,7 @@ const Navbar: React.FunctionComponent = () => {
                 justifyContent={'space-evenly'}
             >
                 <ButtonModel
+                    onClick={() => navigate('/Jewelry-Accessories')}
                     children={'Jewelry & Accessories'}
                     sx={{
                         background: buttons.background,
@@ -137,6 +138,7 @@ const Navbar: React.FunctionComponent = () => {
                         '&:hover': { backgroundColor: 'transparent', boxShadow: 'none', color: '#FF6F61' }
                     }}></ButtonModel>
                 <ButtonModel
+                    onClick={() => navigate('/Home-Living')}
                     children={'Home & Living'}
                     sx={{
                         background: buttons.background,
@@ -148,6 +150,7 @@ const Navbar: React.FunctionComponent = () => {
                         '&:hover': { backgroundColor: 'transparent', boxShadow: 'none', color: '#FF6F61' }
                     }}></ButtonModel>
                 <ButtonModel
+                    onClick={() => navigate('/Wedding-Party')}
                     children={'Wedding Party'}
                     sx={{
                         background: buttons.background,
@@ -159,6 +162,7 @@ const Navbar: React.FunctionComponent = () => {
                         '&:hover': { backgroundColor: 'transparent', boxShadow: 'none', color: '#FF6F61' }
                     }}></ButtonModel>
                 <ButtonModel
+                    onClick={() => navigate('/Toys-Entertainment')}
                     children={'Toys & Entertainment'}
                     sx={{
                         background: buttons.background,
@@ -170,6 +174,7 @@ const Navbar: React.FunctionComponent = () => {
                         '&:hover': { backgroundColor: 'transparent', boxShadow: 'none', color: '#FF6F61' }
                     }}></ButtonModel>
                 <ButtonModel
+                    onClick={() => navigate('/Art-Collectibles')}
                     children={' Art & Collectibles'}
                     sx={{
                         background: buttons.background,
@@ -181,6 +186,7 @@ const Navbar: React.FunctionComponent = () => {
                         '&:hover': { backgroundColor: 'transparent', boxShadow: 'none', color: '#FF6F61' }
                     }}></ButtonModel>
                 <ButtonModel
+                    onClick={() => navigate('/Craft-Supplies-Tools')}
                     children={'Craft Supplies & Tools'}
                     sx={{
                         background: buttons.background,
@@ -249,10 +255,13 @@ const Navbar: React.FunctionComponent = () => {
                             borderBottomRightRadius: '35%',
                         }}>
 
-                        <ImageModel url={banner1} preview={false} styles={{
-                            borderTopLeftRadius: '35%',
-                            borderBottomRightRadius: '35%',
-                        }} />
+                        <ImageModel
+                            url={banner1}
+                            preview={false}
+                            styles={{
+                                borderTopLeftRadius: '35%',
+                                borderBottomRightRadius: '35%',
+                            }} />
                     </Box>
                 </Box>
             </Box>

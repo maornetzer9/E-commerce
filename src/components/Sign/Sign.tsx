@@ -5,9 +5,9 @@ import Typography from '@mui/material/Typography'
 import ButtonModel from '../ButtonModel/ButtonModel'
 import UserApiRequest from '../../apis/user'
 import { Link, useNavigate } from 'react-router-dom'
-import signBackground from '../../assets/icons/signIn-Icon.png'
 import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
-import Logo from '../Logo/Logo'
+// import signBackground from '../../assets/icons/signIn-Icon.png'
+// import Logo from '../Logo/Logo'
 
 
 const Sign: React.FunctionComponent = () => {

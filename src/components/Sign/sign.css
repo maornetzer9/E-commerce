@@ -65,6 +65,7 @@
     }
 
     #sign_inner_container {
+        gap: 10px;
         width: 80%;
         display: flex;
         justify-content: center;

@@ -1,32 +1,52 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Box, IconButton } from '@mui/material';
-import { VERTICAL_LIST } from '../../mock/verticalList';
 import Product from '../Product/Product';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
 import './verticalList.css'
+import UserApiRequest from '../../apis/user';
 
-interface IVerticalList { url?: string; description?: string; price?: string; salePrice?: string; title?: string; key?: number; }
+interface IVerticalList { image?: string; description?: string; price?: string; salePrice?: string; title?: string; key?: number; category?: string; }
 
 const VerticalList: React.FunctionComponent<IVerticalList> = () => {
 
+    const [products, setProducts] = useState<IVerticalList[]>([]);
     const [leftArrowPosition, setLeftArrowPosition] = useState(0);
     const [rightArrowPosition, setRightArrowPosition] = useState(0);
 
+    const baseUrl = 'http://localhost:4200/product/E-Commerce'
+
+    const getProducts = async () => {
+        const response = await new UserApiRequest(baseUrl).getProducts();
+
+        setProducts(response);
+    }
+
+    useEffect(() => {
+
+        const fetchData = async () => {
+            try {
+                await getProducts()
+            }
+            catch (err) {
+                console.log('Error Fetching Data:', err);
+            }
+        }
+        fetchData()
+    }, [])
+
+
     const scroll = (direction: 'left' | 'right') => {
         const container = document.getElementById('vertical_list');
-        if (container) 
-        {
+        if (container) {
             let scrollAmount = 950;
-            if (direction === 'right') 
-            {
+            if (direction === 'right') {
                 window.innerWidth <= 600 ? scrollAmount = 320 : scrollAmount = 950
 
                 container.scrollLeft += scrollAmount;
                 setLeftArrowPosition(Math.max(leftArrowPosition - scrollAmount, 0));
             }
-            else 
-            {
+            else {
                 window.innerWidth <= 600 ? scrollAmount = 320 : scrollAmount = 950
 
                 container.scrollLeft -= scrollAmount;
@@ -43,25 +63,28 @@ const VerticalList: React.FunctionComponent<IVerticalList> = () => {
             <Box
                 id="vertical_list"
                 component={'div'}
-                width={window.innerWidth <= 600 ? '75%' : '66%'}
+                width={window.innerWidth <= 600 ? '76%' : '66%'}
                 sx={{ scrollBehavior: 'smooth' }}
             >
-                {VERTICAL_LIST.map((product, index) => (
+                {products.map((product, index) => (
                     <Product
-                        url={product.url}
+                        url={`${product.image}`}
                         key={index}
-                        description={product.description}
-                        price={product.price}
+                        description={product.title}
+                        price={`$${product.price}`}
                         salePrice={product.salePrice}
-                        title={product.title}
+                        title={product.category}
                     />
                 ))}
             </Box>
 
             <Box
+                className='vertical_list_scroll_icon'
+                component={'div'}
                 position={'absolute'}
-                left={'17%'}
+                left={'18%'}
                 top={'30%'}
+                style={{backgroundColor:'#F0F8FF', borderRadius:'50px', opacity:'0.5'}}
             >
                 <IconButton onClick={() => scroll('left')}>
                     <KeyboardArrowLeftIcon sx={{ fontSize: '100px' }} />
@@ -69,9 +92,12 @@ const VerticalList: React.FunctionComponent<IVerticalList> = () => {
             </Box>
 
             <Box
+                className='vertical_list_scroll_icon'
+                component={'div'}
                 position={'absolute'}
-                right={'17%'}
+                right={'18%'}
                 top={'30%'}
+                style={{backgroundColor:'#F0F8FF', borderRadius:'50px', opacity:'0.5'}}
             >
                 <IconButton onClick={() => scroll('right')}>
                     <KeyboardArrowRightIcon sx={{ fontSize: '100px' }} />

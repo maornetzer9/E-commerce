@@ -36,18 +36,17 @@
 
     #footer_sections_container {
         flex-direction: column;
-        gap: 40px;
+        gap: 20px;
     }
 
     #footer_inner_container {
         display: none;
     }
     #footer_sections {
-        width: 360px;
+        width: 350px;
         padding: 10px;
-        text-align: center;
+            text-align: center;
         box-shadow: 3px 4px 15px 4px lightgray;
-        border-radius: 250px;
         transform: scale(0.9);
     }
 }

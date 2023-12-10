@@ -8,7 +8,6 @@
 
 #vertical_list {
     display: flex;
-    align-items: center;
     overflow: hidden;
     gap: 20px;
 }
@@ -20,5 +19,12 @@
 
     #vertical_list {
         padding: 15px;
+    }
+
+    .vertical_list_scroll_icon {
+        display: flex;
+        justify-content: center;
+        height: 80px;
+        width: 80px;
     }
 }

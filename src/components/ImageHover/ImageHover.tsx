@@ -39,7 +39,7 @@ const ImageHover: React.FunctionComponent<IImageHover> = ({ url, styles, isHover
                     position: 'relative',
                     cursor: 'pointer',
                     height: '350px',
-                    width: '300px',
+                    width: ' 300px',
                 }}
             >
                 <ImageModel url={url} preview={false} />
