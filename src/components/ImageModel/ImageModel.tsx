@@ -18,12 +18,13 @@ const ImageModel: React.FunctionComponent<Props> = ({ url, preview = false, styl
 
 
 
-    const handleTogglePreview = () => {
+    const handleTogglePreview = (event:React.MouseEvent<HTMLLIElement | HTMLDivElement>) => {
+        event.stopPropagation()
         if (preview) {
             setIsPreview((isPreview) => !isPreview)
         }
     };
-
+    
     const handleRightRotatePreview = (e: React.MouseEvent<HTMLButtonElement>) => {
         e.stopPropagation();
         setRotate((rotate) => rotate === 270 ? rotate : rotate += 90);
