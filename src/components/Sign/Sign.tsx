@@ -12,7 +12,7 @@ import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
 
 const Sign: React.FunctionComponent = () => {
 
-    const baseUrl = 'http://localhost:4200/user/sign'
+    const baseUrl = 'https://maornetzer9.github.io/E-Commerce-Backend/' || 'http://localhost:4200/user/sign' ;
     const [user, setUser] = useState({
         email: '',
         password: ''

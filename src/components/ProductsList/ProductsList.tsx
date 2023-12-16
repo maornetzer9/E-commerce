@@ -9,7 +9,7 @@ interface IProductList { className?: string; id?: string; url?: string; descript
 
 const ProductsList: React.FunctionComponent<IProductList> = ({ className }) => {
 
-    const baseUrl = 'http://localhost:4200/product/E-Commerce'
+    const baseUrl = 'http://localhost:4200/user/sign'  || 'http://localhost:4200/product/E-Commerce';
 
     const [products, setProducts] = useState<IProductList[]>([]);
     const [productsRequest, setProductsRequest] = useState<{
