@@ -14,7 +14,7 @@ const VerticalList: React.FunctionComponent<IVerticalList> = () => {
     const [leftArrowPosition, setLeftArrowPosition] = useState(0);
     const [rightArrowPosition, setRightArrowPosition] = useState(0);
 
-    const baseUrl = 'http://localhost:4200/product/E-Commerce'
+    const baseUrl = 'http://localhost:4200/product/E-Commerce' || 'https://maornetzer9.github.io/E-Commerce-Backend/' ;
 
     const getProducts = async () => {
         const response = await new UserApiRequest(baseUrl).getProducts();

@@ -7,9 +7,10 @@ import Loader from '../Loader/Loader';
 
 interface IProductList { className?: string; id?: string; url?: string; description?: string; image?: string; title?: string; price?: string; salePrice?: string; category?: string; }
 
+/* eslint-disable */
 const ProductsList: React.FunctionComponent<IProductList> = ({ className }) => {
 
-    const baseUrl = 'http://localhost:4200/user/sign'  || 'http://localhost:4200/product/E-Commerce';
+    const baseUrl = 'http://localhost:4200/product/E-Commerce' || 'http://localhost:4200/user/sign';
 
     const [products, setProducts] = useState<IProductList[]>([]);
     const [productsRequest, setProductsRequest] = useState<{
@@ -60,8 +61,6 @@ const ProductsList: React.FunctionComponent<IProductList> = ({ className }) => {
                 })
              }
         }
-
-        
     }
 
     useEffect(() => {
