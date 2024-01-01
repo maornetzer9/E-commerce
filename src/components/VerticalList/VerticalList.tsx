@@ -3,8 +3,8 @@ import { Box, IconButton } from '@mui/material';
 import Product from '../Product/Product';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
-import './verticalList.css'
 import UserApiRequest from '../../apis/user';
+import './verticalList.css'
 
 interface IVerticalList { image?: string; description?: string; price?: string; salePrice?: string; title?: string; key?: number; category?: string; }
 
@@ -38,15 +38,18 @@ const VerticalList: React.FunctionComponent<IVerticalList> = () => {
 
     const scroll = (direction: 'left' | 'right') => {
         const container = document.getElementById('vertical_list');
-        if (container) {
+        if (container) 
+        {
             let scrollAmount = 950;
-            if (direction === 'right') {
+            if (direction === 'right') 
+            {
                 window.innerWidth <= 600 ? scrollAmount = 320 : scrollAmount = 950
 
                 container.scrollLeft += scrollAmount;
                 setLeftArrowPosition(Math.max(leftArrowPosition - scrollAmount, 0));
             }
-            else {
+            else 
+            {
                 window.innerWidth <= 600 ? scrollAmount = 320 : scrollAmount = 950
 
                 container.scrollLeft -= scrollAmount;

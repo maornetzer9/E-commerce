@@ -16,8 +16,6 @@ const ImageModel: React.FunctionComponent<Props> = ({ url, preview = false, styl
     const [rotate, setRotate] = useState(0);
     const [size, setSize] = useState(300);
 
-
-
     const handleTogglePreview = (event:React.MouseEvent<HTMLLIElement | HTMLDivElement>) => {
         event.stopPropagation()
         if (preview) {
