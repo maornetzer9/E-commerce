@@ -29,7 +29,6 @@ const Sign: React.FunctionComponent = () => {
     const handleSign = async () => {
 
         const { email, password } = user;
-        const homePage = process.env.PUBLIC_URL;
 
         const response: any = await new UserApiRequest(baseUrl).sign(email, password)
 
@@ -39,7 +38,7 @@ const Sign: React.FunctionComponent = () => {
 
         localStorage.setItem('id', id);
 
-        navigate(homePage);
+        navigate(`/`);
     }
 
     return (
