@@ -10,7 +10,9 @@ interface IProductList { className?: string; id?: string; url?: string; descript
 /* eslint-disable */
 const ProductsList: React.FunctionComponent<IProductList> = ({ className }) => {
 
-    const baseUrl = 'http://localhost:4200/product/E-Commerce' || 'http://localhost:4200/user/sign';
+    // const baseUrl = 'http://localhost:4200/product/E-Commerce' || 'http://localhost:4200/user/sign';
+
+   const baseUrl =  process.env.NODE_ENV !== "development" ? "https://e-commerce-vpm6.onrender.com/product/E-Commerce" || process.env.NODE_ENV !== "production"  :  'http://localhost:4200/product/E-Commerce' ;
 
     const [products, setProducts] = useState<IProductList[]>([]);
     const [productsRequest, setProductsRequest] = useState<{

@@ -9,11 +9,11 @@ import './App.css';
 const App: React.FunctionComponent = () => {
 
     return (
-        <BrowserRouter>
+        <BrowserRouter basename={process.env.PUBLIC_URL}>
             <Routes>
 
                 <Route
-                    path={process.env.PUBLIC_URL}
+                    path='/'
                     element={<HomePage />}
                 />
                 <Route
