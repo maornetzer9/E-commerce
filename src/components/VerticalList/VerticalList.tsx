@@ -71,7 +71,7 @@ const VerticalList: React.FunctionComponent<IVerticalList> = () => {
                 width={window.innerWidth <= 600 ? '76%' : '66%'}
                 sx={{ scrollBehavior: 'smooth' }}
             >
-                {products.map((product, index) => (
+                { products.length ?  products.map((product, index) => (
                     <Product
                         url={`${product.image}`}
                         key={index}
@@ -80,7 +80,7 @@ const VerticalList: React.FunctionComponent<IVerticalList> = () => {
                         salePrice={product.salePrice}
                         title={product.category}
                     />
-                ))}
+                )) : null }
             </Box>
 
             <Box
