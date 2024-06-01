@@ -5,23 +5,53 @@ import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
 import UserApiRequest from '../../apis/user';
 import './verticalList.css'
+import Loader from '../Loader/Loader';
 
 interface IVerticalList { image?: string; description?: string; price?: string; salePrice?: string; title?: string; key?: number; category?: string; }
 
 const VerticalList: React.FunctionComponent<IVerticalList> = () => {
 
-    const [products, setProducts] = useState<IVerticalList[]>([]);
     const [leftArrowPosition, setLeftArrowPosition] = useState(0);
     const [rightArrowPosition, setRightArrowPosition] = useState(0);
-
+    const [productsRequest, setProductsRequest] = useState<{
+        loading:boolean;
+        data:IVerticalList[] | null;
+        error: Error | null;
+    }>({
+        loading:false,
+        data:null,
+        error:null,
+    })
     // const baseUrl = 'http://localhost:4200/product/E-Commerce' || 'https://maornetzer9.github.io/E-Commerce-Backend/' ;
     const baseUrl =  process.env.NODE_ENV !== "development" ? "https://e-commerce-vpm6.onrender.com/product/E-Commerce" || process.env.NODE_ENV !== "production"  :  'http://localhost:4200/product/E-Commerce' ;
 
 
     const getProducts = async () => {
-        const response = await new UserApiRequest(baseUrl).getProducts();
 
-        setProducts(response);
+        try
+        {
+           setProductsRequest((prevState) => {
+            return {
+                ...prevState,
+                loading: true
+            }
+           })
+
+            const response = await new UserApiRequest(baseUrl).getProducts();
+
+
+            setProductsRequest((prevState) => {
+                return {
+                    ...prevState,
+                    loading: false,
+                    data: response
+                }
+            })
+        }
+        catch(err)
+        {
+            console.error(err);
+        }
     }
 
     useEffect(() => {
@@ -36,6 +66,8 @@ const VerticalList: React.FunctionComponent<IVerticalList> = () => {
         }
         fetchData()
     }, [])
+
+    if(!productsRequest.data || productsRequest.loading) return <Loader />
 
 
     const scroll = (direction: 'left' | 'right') => {
@@ -71,7 +103,7 @@ const VerticalList: React.FunctionComponent<IVerticalList> = () => {
                 width={window.innerWidth <= 600 ? '76%' : '66%'}
                 sx={{ scrollBehavior: 'smooth' }}
             >
-                { products.length ?  products.map((product, index) => (
+                { !productsRequest.loading ?  productsRequest.data.map((product, index) => (
                     <Product
                         url={`${product.image}`}
                         key={index}
@@ -80,7 +112,7 @@ const VerticalList: React.FunctionComponent<IVerticalList> = () => {
                         salePrice={product.salePrice}
                         title={product.category}
                     />
-                )) : null }
+                )) : <Loader/> }
             </Box>
 
             <Box

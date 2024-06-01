@@ -26,7 +26,6 @@ const ProductsList: React.FunctionComponent<IProductList> = ({ className }) => {
     })
 
     const getProducts = async () => {
-
         try
         {
             setProductsRequest((prevState) => {
@@ -80,7 +79,7 @@ const ProductsList: React.FunctionComponent<IProductList> = ({ className }) => {
             component={'div'}
             id='product_list'
         >
-            {products.map((product, index) =>
+            {!productsRequest.loading  ? products.map((product, index) =>
                 <Product
                     key={index}
                     url={`${product.image}`}
@@ -89,7 +88,7 @@ const ProductsList: React.FunctionComponent<IProductList> = ({ className }) => {
                     price={`$${product.price}`}
                     salePrice={product.salePrice}
                 />
-            )}
+            ) : <Loader/> }
         </Box>
     )
 }

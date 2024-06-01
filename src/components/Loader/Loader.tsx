@@ -1,7 +1,10 @@
-import React from 'react'
+import React from 'react';
+import './loader.css';
 
 export default function Loader() {
   return (
-    <div>Loader</div>
-  )
+    <div className="loader-container">
+      <div className="spinner"></div>
+    </div>
+  );
 }
