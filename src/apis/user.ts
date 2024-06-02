@@ -7,7 +7,7 @@ class UserApiRequest
         this.baseUrl = baseUrl;
     }
 
-    async sign(email: string, password: string): Promise<object>
+    async sign(email: string, password: string): Promise<object | any>
     {
         try
         {
@@ -23,7 +23,6 @@ class UserApiRequest
         catch(err)
         {
             console.log(err);
-            throw err
         }
     }
 
