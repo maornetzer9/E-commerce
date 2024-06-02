@@ -14,7 +14,7 @@ const Sign: React.FunctionComponent = () => {
 
     // const baseUrl = 'http://localhost:4200/user/sign' || 'https://maornetzer9.github.io/E-Commerce-Backend/';
 
-    const baseUrl =  process.env.NODE_ENV !== "development" ? "https://e-commerce-vpm6.onrender.com/product/E-Commerce" || process.env.NODE_ENV !== "production"  :  'http://localhost:4200/product/E-Commerce' ;
+    const baseUrl =  process.env.NODE_ENV !== "development" ? "https://e-commerce-vpm6.onrender.com/user/sign" || process.env.NODE_ENV !== "production"  :  'http://localhost:4200/user/sign' ;
 
     const [user, setUser] = useState({
         email: '',
@@ -29,7 +29,6 @@ const Sign: React.FunctionComponent = () => {
     const handleSign = async () => {
 
         const { email, password } = user;
-        const homePage = process.env.PUBLIC_URL;
 
         const response: any = await new UserApiRequest(baseUrl).sign(email, password)
 
@@ -39,7 +38,7 @@ const Sign: React.FunctionComponent = () => {
 
         localStorage.setItem('id', id);
 
-        navigate(homePage);
+        navigate(`/`);
     }
 
     return (

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { FormControl, MenuItem, Select, Box } from '@mui/material';
 import { MOBILEDROPDOWN } from '../../mock/dropDown.mock';
 import { useNavigate } from 'react-router-dom';
@@ -48,9 +48,9 @@ const MobileNavbar: React.FunctionComponent<MobileNavbarProps> = ({ dropdownWidt
                 id='mobileNavbar_logo'
                 component={'div'}
             >
-                <img src={IconLogo2} />
-                <img src={IconLogo1} />
-                <img src={IconLogo3} />
+                <img src={IconLogo2} alt='logo1'/>
+                <img src={IconLogo1} alt='logo2'/>
+                <img src={IconLogo3} alt='logo3'/>
             </Box>
 
 

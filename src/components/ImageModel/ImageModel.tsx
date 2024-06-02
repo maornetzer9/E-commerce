@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Box, ImageListItem, Button, Typography } from '@mui/material'
+import { Box, ImageListItem, Button } from '@mui/material'
 import { FaArrowRotateLeft } from "react-icons/fa6";
 import { FaArrowRotateRight } from "react-icons/fa6";
 import { LiaSearchPlusSolid } from "react-icons/lia";
