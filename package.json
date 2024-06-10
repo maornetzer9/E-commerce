@@ -30,6 +30,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "analyze": "source-map-explorer 'build/static/js/*.js'",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "deployX": "npm run build && gh-pages -d build",
@@ -57,6 +58,8 @@
   },
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
-    "gh-pages": "^6.1.0"
+    "gh-pages": "^6.1.0",
+    "source-map-explorer": "^2.5.3",
+    "webpack-bundle-analyzer": "^4.10.2"
   }
 }
