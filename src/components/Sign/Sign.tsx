@@ -12,10 +12,16 @@ import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
 
 const Sign: React.FunctionComponent = () => {
 
-    // const baseUrl = 'http://localhost:4200/user/sign' || 'https://maornetzer9.github.io/E-Commerce-Backend/';
-
-    const baseUrl =  process.env.NODE_ENV !== "development" ? "https://e-commerce-vpm6.onrender.com/user/sign" || process.env.NODE_ENV !== "production"  :  'http://localhost:4200/user/sign' ;
-
+    let baseUrl: string;   
+    
+    if(process.env.NODE_ENV !== "development")
+    {
+        baseUrl =  "https://e-commerce-vpm6.onrender.com/product/E-Commerce";
+    }
+    else
+    {
+        baseUrl = 'http://localhost:4200/product/E-Commerce'; 
+    }
     const [user, setUser] = useState({
         email: '',
         password: ''
