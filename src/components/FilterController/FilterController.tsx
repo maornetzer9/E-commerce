@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import React, { ReactNode, useState } from 'react';
 import { Box, Button } from '@mui/material';
 import { BiSolidFilterAlt } from 'react-icons/bi';
 import './filterController.css'; // Import the CSS file
@@ -6,6 +6,16 @@ import './filterController.css'; // Import the CSS file
 interface IFilterController { children: ReactNode; styles?: React.CSSProperties; showIcon?: boolean }
 
 const FilterController: React.FunctionComponent<IFilterController> = ({ children, styles, showIcon = true }) => {
+
+    const [activeFilter, setActiveFilter] = useState<boolean>(true);
+
+    const handleActiveFilter = () => 
+        {
+            setActiveFilter( !activeFilter ); 
+
+            setTimeout(() => setActiveFilter( !activeFilter ), 2000)
+        }
+
     return (
         <Box
             className="FilterController"
@@ -85,10 +95,13 @@ const FilterController: React.FunctionComponent<IFilterController> = ({ children
                         display="flex"
                         alignItems="center"
                         justifyContent="center"
+                        onClick={handleActiveFilter}
                         gap={1}
                     >
                         <BiSolidFilterAlt
                             fontSize={19}
+                            id='filter-icon'
+                            className={activeFilter ? 'rotateBottom' : 'rotateTop'}
                             style={{
                                 display: showIcon ? 'flex' : 'none'
                             }}

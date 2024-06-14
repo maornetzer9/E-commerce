@@ -28,3 +28,28 @@
   .moving-element {
     animation: moveLeftRight 5s cubic-bezier(0.4, 0, 0.6, 1) infinite; /* Adjust the duration and cubic-bezier values as needed */
   }
+
+  @keyframes rotate-top {
+    100% {
+        transform: rotateX(-180deg);
+        transform-origin: center;
+    }
+}
+
+/* Keyframes for rotating from bottom to top */
+@keyframes rotate-bottom {
+    0% {
+        transform: rotateX(180deg);
+        transform-origin: center ;
+    }
+}
+
+/* Apply the animation for rotating from top to bottom */
+#filter-icon.rotateTop {
+    animation: rotate-top 2s linear forwards;
+}
+
+/* Apply the animation for rotating from bottom to top */
+#filter-icon.rotateBottom {
+    animation: rotate-bottom 2s linear forwards;
+}
