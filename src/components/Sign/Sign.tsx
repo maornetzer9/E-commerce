@@ -6,8 +6,8 @@ import ButtonModel from '../ButtonModel/ButtonModel'
 import UserApiRequest from '../../apis/user'
 import { Link, useNavigate } from 'react-router-dom'
 import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
-// import signBackground from '../../assets/icons/signIn-Icon.png'
-// import Logo from '../Logo/Logo'
+import signBackground from '../../assets/icons/signIn-Icon.png'
+import Logo from '../Logo/Logo'
 
 
 const Sign: React.FunctionComponent = () => {
@@ -16,11 +16,11 @@ const Sign: React.FunctionComponent = () => {
     
     if(process.env.NODE_ENV !== "development")
     {
-        baseUrl =  "https://e-commerce-vpm6.onrender.com/product/E-Commerce";
+        baseUrl =  "https://maornetzer9.github.io/E-Commerce-Backend/";
     }
     else
     {
-        baseUrl = 'http://localhost:4200/product/E-Commerce'; 
+        baseUrl = 'http://localhost:4200/user/sign'; 
     }
     const [user, setUser] = useState({
         email: '',
@@ -52,12 +52,12 @@ const Sign: React.FunctionComponent = () => {
             component={'div'}
             id='sign_background'
         >
-            {/* <Box
+            <Box
                 component={'div'}
                 className='sign_icon'
             >
                 <Logo url={signBackground} showButton={false} />
-            </Box> */}
+            </Box>
 
             <Box
                 id='sign_container'

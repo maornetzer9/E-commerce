@@ -4,8 +4,8 @@ import Product from '../Product/Product';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
 import UserApiRequest from '../../apis/user';
-import './verticalList.css'
 import Loader from '../Loader/Loader';
+import './verticalList.css'
 
 interface IVerticalList { image?: string; description?: string; price?: string; salePrice?: string; title?: string; key?: number; category?: string; }
 
@@ -22,7 +22,7 @@ const VerticalList: React.FunctionComponent<IVerticalList> = () => {
         data:null,
         error:null,
     })
-    
+
     let baseUrl: string;   
     
     if(process.env.NODE_ENV !== "development")
@@ -34,9 +34,7 @@ const VerticalList: React.FunctionComponent<IVerticalList> = () => {
         baseUrl = 'http://localhost:4200/product/E-Commerce'; 
     }
 
-
     const getProducts = async () => {
-
         try
         {
            setProductsRequest((prevState) => {
@@ -47,7 +45,6 @@ const VerticalList: React.FunctionComponent<IVerticalList> = () => {
            })
 
             const response = await new UserApiRequest(baseUrl).getProducts();
-
 
             setProductsRequest((prevState) => {
                 return {
@@ -64,7 +61,6 @@ const VerticalList: React.FunctionComponent<IVerticalList> = () => {
     }
 
     useEffect(() => {
-
         const fetchData = async () => {
             try {
                 await getProducts()
