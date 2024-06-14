@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Box } from '@mui/material'
 import Product from '../Product/Product'
-import UserApiRequest from '../../apis/user';
+import UserApiService from '../../services/user';
 import '../Product/product.css'
 import Loader from '../Loader/Loader';
 
@@ -10,16 +10,16 @@ interface IProductList { className?: string; id?: string; url?: string; descript
 /* eslint-disable */
 const ProductsList: React.FunctionComponent<IProductList> = ({ className }) => {
 
-    let baseUrl: string;   
+    let baseUrl: string = "https://e-commerce-vpm6.onrender.com/product/E-Commerce";   
     
-    if(process.env.NODE_ENV !== "development")
-    {
-        baseUrl =  "https://e-commerce-vpm6.onrender.com/product/E-Commerce";
-    }
-    else
-    {
-        baseUrl = 'http://localhost:4200/product/E-Commerce'; 
-    }
+    // if(process.env.NODE_ENV !== "development")
+    // {
+    //     baseUrl =  "https://e-commerce-vpm6.onrender.com/product/E-Commerce";
+    // }
+    // else
+    // {
+    //     baseUrl = 'http://localhost:4200/product/E-Commerce'; 
+    // }
     
     const [products, setProducts] = useState<IProductList[]>([]);
     const [productsRequest, setProductsRequest] = useState<{
@@ -42,7 +42,7 @@ const ProductsList: React.FunctionComponent<IProductList> = ({ className }) => {
                 }
             })
         
-            const response = await new UserApiRequest(baseUrl).getProducts();
+            const response = await new UserApiService(baseUrl).getProducts();
     
              setProductsRequest((prevState) => {
                 return {

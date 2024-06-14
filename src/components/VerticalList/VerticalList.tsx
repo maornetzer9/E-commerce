@@ -3,7 +3,7 @@ import { Box, IconButton } from '@mui/material';
 import Product from '../Product/Product';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
-import UserApiRequest from '../../apis/user';
+import UserApiService from '../../services/user';
 import Loader from '../Loader/Loader';
 import './verticalList.css'
 
@@ -23,16 +23,16 @@ const VerticalList: React.FunctionComponent<IVerticalList> = () => {
         error:null,
     })
 
-    let baseUrl: string;   
+    let baseUrl: string = "https://e-commerce-vpm6.onrender.com/product/E-Commerce"; 
     
-    if(process.env.NODE_ENV !== "development")
-    {
-        baseUrl =  "https://e-commerce-vpm6.onrender.com/product/E-Commerce";
-    }
-    else
-    {
-        baseUrl = 'http://localhost:4200/product/E-Commerce'; 
-    }
+    // if(process.env.NODE_ENV !== "development")
+    // {
+    //     baseUrl =  "https://e-commerce-vpm6.onrender.com/product/E-Commerce";
+    // }
+    // else
+    // {
+    //     baseUrl = 'http://localhost:4200/product/E-Commerce'; 
+    // }
 
     const getProducts = async () => {
         try
@@ -44,7 +44,7 @@ const VerticalList: React.FunctionComponent<IVerticalList> = () => {
             }
            })
 
-            const response = await new UserApiRequest(baseUrl).getProducts();
+            const response = await new UserApiService(baseUrl).getProducts();
 
             setProductsRequest((prevState) => {
                 return {
@@ -62,12 +62,8 @@ const VerticalList: React.FunctionComponent<IVerticalList> = () => {
 
     useEffect(() => {
         const fetchData = async () => {
-            try {
-                await getProducts()
-            }
-            catch (err) {
-                console.log('Error Fetching Data:', err);
-            }
+            try { await getProducts() }
+            catch (err) { console.log('Error Fetching Data:', err); }
         }
         fetchData()
     }, [])

@@ -1,4 +1,4 @@
-class UserApiRequest 
+class UserApiService 
 {
     baseUrl: string
 
@@ -48,4 +48,4 @@ class UserApiRequest
 }
 
 
-export default UserApiRequest
+export default UserApiService

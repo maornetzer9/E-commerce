@@ -3,7 +3,7 @@ import { Box, TextField } from '@mui/material'
 import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
 import Typography from '@mui/material/Typography'
 import ButtonModel from '../ButtonModel/ButtonModel'
-import UserApiRequest from '../../apis/user'
+import UserApiService from '../../services/user'
 import { Link, useNavigate } from 'react-router-dom'
 import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
 import signBackground from '../../assets/icons/signIn-Icon.png'
@@ -36,7 +36,7 @@ const Sign: React.FunctionComponent = () => {
 
         const { email, password } = user;
 
-        const response: any = await new UserApiRequest(baseUrl).sign(email, password)
+        const response: any = await new UserApiService(baseUrl).sign(email, password)
 
         const { code, message, id } = response
 
