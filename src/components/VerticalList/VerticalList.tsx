@@ -23,16 +23,16 @@ const VerticalList: React.FunctionComponent<IVerticalList> = () => {
         error:null,
     })
 
-    let baseUrl: string = "https://e-commerce-vpm6.onrender.com/product/E-Commerce"; 
+    let baseUrl: string;   
     
-    // if(process.env.NODE_ENV !== "development")
-    // {
-    //     baseUrl =  "https://e-commerce-vpm6.onrender.com/product/E-Commerce";
-    // }
-    // else
-    // {
-    //     baseUrl = 'http://localhost:4200/product/E-Commerce'; 
-    // }
+    if(process.env.NODE_ENV !== "development")
+    {
+        baseUrl =  "https://e-commerce-vpm6.onrender.com/product/E-Commerce";
+    }
+    else
+    {
+        baseUrl = 'http://localhost:4200/product/E-Commerce'; 
+    }
 
     const getProducts = async () => {
         try

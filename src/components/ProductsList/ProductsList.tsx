@@ -10,16 +10,16 @@ interface IProductList { className?: string; id?: string; url?: string; descript
 /* eslint-disable */
 const ProductsList: React.FunctionComponent<IProductList> = ({ className }) => {
 
-    let baseUrl: string = "https://e-commerce-vpm6.onrender.com/product/E-Commerce";   
+    let baseUrl: string;   
     
-    // if(process.env.NODE_ENV !== "development")
-    // {
-    //     baseUrl =  "https://e-commerce-vpm6.onrender.com/product/E-Commerce";
-    // }
-    // else
-    // {
-    //     baseUrl = 'http://localhost:4200/product/E-Commerce'; 
-    // }
+    if(process.env.NODE_ENV !== "development")
+    {
+        baseUrl =  "https://e-commerce-vpm6.onrender.com/product/E-Commerce";
+    }
+    else
+    {
+        baseUrl = 'http://localhost:4200/product/E-Commerce'; 
+    }
     
     const [products, setProducts] = useState<IProductList[]>([]);
     const [productsRequest, setProductsRequest] = useState<{
