@@ -26,10 +26,8 @@ const HomePage: React.FunctionComponent = () => {
 
     return (
         <Box component={'div'} className="App">
-            { mobileMode ?
-                (
-                    <Section id='1'> <MobileNavbar dropdownWidth="300px" /> </Section>
-                )
+            { mobileMode 
+                ? <Section id='1'> <MobileNavbar dropdownWidth="300px" /> </Section>
                 : (<Section id='2'> <Navbar /> </Section>)
             }
             <Section id='3'>  <Icon />  </Section>

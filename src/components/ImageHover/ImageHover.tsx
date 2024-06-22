@@ -5,20 +5,33 @@ import ImageModel from '../ImageModel/ImageModel'
 import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import SearchIcon from '@mui/icons-material/Search';
+import PopupModal from '../Popup-Modal/PopupModal';
 import './style.css'
 
-interface IImageHover { url: string; styles?: React.CSSProperties; isHovered?: boolean; }
+interface IImageHover { 
+    url: string; 
+    styles?: React.CSSProperties; 
+    isHovered?: boolean;
+    title?: string;
+    description?: string;
+    salePrice?: string; 
+    price?: string; 
+ }
 
-const ImageHover: React.FunctionComponent<IImageHover> = ({ url, styles, isHovered = false }) => {
+const ImageHover: React.FunctionComponent<IImageHover> = ({ url, styles, isHovered = false, title ,description ,salePrice ,price }) => {
 
-    const [like, setLike] = useState(false);
-    const [isHover, setIsHover] = useState(false);
+    const [ like, setLike ] = useState<boolean>(false);
+    const [ isHover, setIsHover ] = useState<boolean>(false);
+    const [ popupStatus, setPopupStatus ] = useState<boolean>(false);
 
     const handleMouseEnter = () => setIsHover(true);
     const handleMouseLeave = () => setIsHover(false);
 
     const handleLike = () => setLike(true);
     const handleUnLike = () => setLike(false);
+
+    const openPopup = () => setPopupStatus(true); 
+    const closePopup = () => setPopupStatus(false) 
 
     const hoverState = isHovered || isHover;
 
@@ -91,6 +104,7 @@ const ImageHover: React.FunctionComponent<IImageHover> = ({ url, styles, isHover
                             <SearchIcon />
                         </Box>
                         <Typography
+                            onClick={openPopup}
                             sx={{ '&:hover': { color: '#FF6F61', transition: '0.7s' } }}
                             variant='body2'
                             width={'fit-content'}
@@ -107,6 +121,19 @@ const ImageHover: React.FunctionComponent<IImageHover> = ({ url, styles, isHover
                         </Typography>
 
                     </Box>)}
+                    {
+                        popupStatus ?  
+                            <PopupModal 
+                                url={url}
+                                closePopup={closePopup} 
+                                popupStatus={popupStatus} 
+                                title={title}
+                                description={description}
+                                salePrice={salePrice}
+                                price={price}
+                            /> 
+                        : null 
+                    }
             </Box>
         </Box>
     )

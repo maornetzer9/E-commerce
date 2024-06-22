@@ -7,8 +7,6 @@ interface Props { url: string; description?: string; price?: string; salePrice?:
 
 const Product: React.FunctionComponent<Props> = ({ url, description, price, salePrice, title }) => {
 
-
-
     return (
         <Box
             component={'div'}
@@ -17,8 +15,11 @@ const Product: React.FunctionComponent<Props> = ({ url, description, price, sale
             <Box component={'div'}>
                 <ImageHover
                     url={url}
+                    title={title}
+                    description={description}
+                    salePrice={salePrice}
+                    price={price}
                     isHovered={false}
-                    // styles={{ height: '350px', width: '300px' }}
                 />
             </Box>
             <Box
@@ -29,8 +30,6 @@ const Product: React.FunctionComponent<Props> = ({ url, description, price, sale
                 >
                     <Typography
                         variant="h6"
-                        // height={'50px'}
-                        // marginTop={'20px'}
                     >
                         {description}
                     </Typography>
